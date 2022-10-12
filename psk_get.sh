@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CALLSIGN="KC1QBY"
-DATADIR="$(PWD)/psk_data"
+DATADIR="$(pwd)/psk_data"
 
 mkdir -p "$DATADIR"
 

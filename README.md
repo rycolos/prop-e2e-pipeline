@@ -1,12 +1,12 @@
 # prop-e2e-pipeline
 
-Create cronjob - download psk data every Monday at 1AM
+Create cronjob - download psk data every 6 days at 1AM
 
-`(crontab -l ; echo "0 1 * * 1 sh home/user/prop_e2e_pipeline/psk_get.sh") | crontab -`
+`(crontab -l ; echo "0 1 */6 * * sh /home/USER/prop_e2e_pipeline/psk_get.sh") | crontab -`
 
 ## Create Table
 ```
-CREATE TABLE pskreporter-raw (
+CREATE TABLE psk-raw (
     sNR TEXT,
     mode TEXT,
     MHz REAL,
@@ -24,7 +24,7 @@ CREATE TABLE pskreporter-raw (
 ```
 
 ```
-CREATE TABLE received (
+CREATE TABLE psk-received (
     id SERIAL,
     sNR TEXT,
     mode TEXT,
@@ -43,7 +43,7 @@ CREATE TABLE received (
 ```
 
 ```
-CREATE TABLE received_by (
+CREATE TABLE psk-received_by (
     id SERIAL,
     sNR TEXT,
     mode TEXT,
