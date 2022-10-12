@@ -6,20 +6,57 @@ Create cronjob - download psk data every Monday at 1AM
 
 ## Create Table
 ```
-CREATE TABLE Test (
-id SERIAL,
-sNR TEXT,
-mode TEXT,
-frequency REAL,
-rxTime TIMESTAMP,
-senserDXCC TEXT,
-senderCallsign TEXT,
-senderGridTEXT,
-senderLat REAL,
-senderLon REAL,
-receiverCallsign TEXT,
-receiverGrid TEXT,
-receiverLat REAL,
-receiverLon REAL
+CREATE TABLE pskreporter-raw (
+    sNR TEXT,
+    mode TEXT,
+    MHz REAL,
+    rxTime TIMESTAMP,
+    senserDXCC TEXT,
+    flowStartSeconds BIGINT,
+    senderCallsign TEXT,
+    senderLocator TEXT,
+    receiverCallsign TEXT,
+    receiverLocator TEXT,
+    receiverAntennaInformation TEXT,
+    senderDXCCADIF INT,
+    submode TEXT
+)
+```
+
+```
+CREATE TABLE received (
+    id SERIAL,
+    sNR TEXT,
+    mode TEXT,
+    frequency REAL,
+    rxTime TIMESTAMP,
+    senserDXCC TEXT,
+    senderCallsign TEXT,
+    senderGrid TEXT,
+    senderLat REAL,
+    senderLon REAL,
+    receiverCallsign TEXT,
+    receiverGrid TEXT,
+    receiverLat REAL,
+    receiverLon REAL
+)
+```
+
+```
+CREATE TABLE received_by (
+    id SERIAL,
+    sNR TEXT,
+    mode TEXT,
+    frequency REAL,
+    rxTime TIMESTAMP,
+    senserDXCC TEXT,
+    senderCallsign TEXT,
+    senderGrid TEXT,
+    senderLat REAL,
+    senderLon REAL,
+    receiverCallsign TEXT,
+    receiverGrid TEXT,
+    receiverLat REAL,
+    receiverLon REAL
 )
 ```
