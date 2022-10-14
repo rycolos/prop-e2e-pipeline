@@ -2,7 +2,7 @@
 
 CALLSIGN="KC1QBY"
 DATADIR="$(pwd)/postgres_data/psk_data"
-DOCKERDATADIR="/var/lib/postgresql/data/psk_data/"
+DOCKERDATADIR="/var/lib/postgresql/data/psk_data"
 DB="prop-e2e"
 USER="postgres"
 
