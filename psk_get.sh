@@ -3,7 +3,7 @@
 CALLSIGN="KC1QBY"
 DATADIR="$(pwd)/psk_data"
 JOBDIR="$(pwd)/jobs"
-DB="analysis"
+DB="prop-e2e"
 USER="postgres"
 
 mkdir -p "$DATADIR"
