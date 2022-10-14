@@ -12,6 +12,6 @@ CREATE TABLE pskreporter_raw (
     receiverAntennaInformation TEXT,
     senderDXCCADIF TEXT,
     submode TEXT,
-	CONSTRAINT comp_key PRIMARY KEY (rxTIME, senderCallsign, receiverCallsign),
+	CONSTRAINT comp_key PRIMARY KEY (rxTime, senderCallsign, receiverCallsign),
 	CONSTRAINT check_kc1qby CHECK (receiverCallsign LIKE '%KC1QBY%' OR senderCallsign LIKE '%KC1QBY%')
 )
