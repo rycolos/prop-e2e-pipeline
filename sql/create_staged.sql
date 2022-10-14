@@ -20,7 +20,7 @@ CREATE TABLE pskreporter_staged (
     sNR INT,
     commMode TEXT,
     frequency DOUBLE PRECISION,
-    rxTime as TIMESTAMP,
+    rxTime TIMESTAMP,
     senderCallsign TEXT,
     senderLocator TEXT,
     senderLat REAL,
