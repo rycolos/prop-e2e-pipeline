@@ -3,7 +3,7 @@ SELECT
     CAST(sNR AS INT),
     mode,
     CAST(MHz AS DOUBLE PRECISION),
-    CAST(rxTime AS TIMESTAMP),
+    rxTime,
     senderCallsign,
     senderLocator,
     receiverCallsign,

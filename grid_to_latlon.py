@@ -43,6 +43,7 @@ for row in result:
         print(sender, senderLat, senderLon)
         cur.execute(f"UPDATE pskreporter_staged SET senderlat = {senderLat} WHERE id = {row[0]}")
         cur.execute(f"UPDATE pskreporter_staged SET senderlon = {senderLon} WHERE id = {row[0]}")
+        conn.commit()
 
     if row[5] is None or row[6] is None:
         receiver = row[4]
@@ -51,8 +52,7 @@ for row in result:
         print(receiver, receiverLat, receiverLon) 
         cur.execute(f"UPDATE pskreporter_staged SET receiverlat = {receiverLat} WHERE id = {row[0]}")
         cur.execute(f"UPDATE pskreporter_staged SET receiverlon = {receiverLon} WHERE id = {row[0]}")
+        conn.commit()
 
-    conn.commit()
-    
 cur.close()
 conn.close()
