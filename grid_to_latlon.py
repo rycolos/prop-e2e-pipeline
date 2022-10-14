@@ -32,21 +32,27 @@ conn = psycopg2.connect(database="prop-e2e",
                         port="5432")
 
 cur = conn.cursor()
-cur.execute("SELECT * FROM pskreporter_staged")
+cur.execute("SELECT id, senderLocator, senderLat, senderLon, receiverLocator, receiverLat, receiverLon FROM pskreporter_staged FOR UPDATE")
 result = cur.fetchall()
+
 for row in result:
-    sender = row[5]
-    sender = sender[0:8]
-    senderLat, senderLon = to_location(sender)
-    print(sender, senderLat, senderLon)
-    cur.execute(f"UPDATE pskreporter_staged SET senderlat = {senderLat}")
-    cur.execute(f"UPDATE pskreporter_staged SET senderlon = {senderLon}")
+    if row[2] is None or row[3] is None:
+        sender = row[1]
+        sender = sender[0:8]
+        senderLat, senderLon = to_location(sender)
+        print(sender, senderLat, senderLon)
+        cur.execute(f"UPDATE pskreporter_staged SET senderlat = {senderLat} WHERE id = {row[0]}")
+        cur.execute(f"UPDATE pskreporter_staged SET senderlon = {senderLon} WHERE id = {row[0]}")
+
+    if row[5] is None or row[6] is None:
+        receiver = row[4]
+        receiver = receiver[0:8]
+        receiverLat, receiverLon = to_location(receiver)
+        print(receiver, receiverLat, receiverLon) 
+        cur.execute(f"UPDATE pskreporter_staged SET receiverlat = {receiverLat} WHERE id = {row[0]}")
+        cur.execute(f"UPDATE pskreporter_staged SET receiverlon = {receiverLon} WHERE id = {row[0]}")
+
     conn.commit()
-
-    # receiver = row[9]
-    # receiver = receiver[0:8]
-    # receiverLat, receiverLon = to_location(receiver)
-    # print(receiver, receiverLat, receiverLon) 
-
+    
 cur.close()
 conn.close()
