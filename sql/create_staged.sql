@@ -16,7 +16,7 @@
 -- ALTER TABLE pskreporter_staged ADD COLUMN receiverLon REAL;
 
 CREATE TABLE pskreporter_staged (
-    id INT GENERATED ALWAYS AS IDENTIY,
+    id INT GENERATED ALWAYS AS IDENTITY,
     sNR INT,
     commMode TEXT,
     frequency DOUBLE PRECISION,
