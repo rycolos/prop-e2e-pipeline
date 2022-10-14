@@ -29,6 +29,6 @@ CREATE TABLE pskreporter_staged (
     receiverLocator TEXT,
     receiverLat REAL,
     receiverLon REAL,
-	CONSTRAINT comp_key PRIMARY KEY (rxTime, senderCallsign, receiverCallsign),
-	CONSTRAINT check_kc1qby CHECK (receiverCallsign LIKE '%KC1QBY%' OR senderCallsign LIKE '%KC1QBY%')
+	CONSTRAINT staged_prim_key PRIMARY KEY (rxTime, senderCallsign, receiverCallsign),
+	CONSTRAINT staged_check_kc1qby CHECK (receiverCallsign LIKE '%KC1QBY%' OR senderCallsign LIKE '%KC1QBY%')
 )
