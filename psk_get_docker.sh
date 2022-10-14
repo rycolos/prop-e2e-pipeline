@@ -19,7 +19,7 @@ rm "$DATADIR"/temp.zip
 echo "Cleaning data..."
 sed -i  's/\([^,]\)"\([^,]\)/\1\2/g' "$DATADIR"/$(date +%Y-%m-%d)_psk.csv
 
-#APPEND TO DB
+#APPEND TO RAW DB
 echo "Appending to DB..."
 docker exec -i prop-e2e-pipeline-postgres-1 psql -d $DB -U $USER --command="CREATE TEMP TABLE tmp_table ON COMMIT DROP AS SELECT * FROM pskreporter_raw; \
 COPY tmp_table \

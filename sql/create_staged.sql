@@ -5,12 +5,12 @@ CREATE TABLE pskreporter_staged AS
 		CAST(MHz AS DOUBLE PRECISION) AS frequency,
 		senderCallsign,
 		senderLocator,
-		CAST(NULL AS REAL) AS senderLat,
-		CAST(NULL AS REAL) AS senderLon,
 		receiverCallsign,
 		receiverLocator,
-		CAST(NULL AS REAL) AS receiverLat,
-		CAST(NULL AS REAL) AS receiverLon
 	FROM pskreporter_raw;
 
-ALTER TABLE pskreporter_staged ADD COLUMN id bigint GENERATED ALWAYS AS IDENTITY
+ALTER TABLE pskreporter_staged ADD COLUMN id INTEGER GENERATED ALWAYS AS IDENTITY
+ALTER TABLE pskreporter_staged ADD COLUMN senderLat REAL
+ALTER TABLE pskreporter_staged ADD COLUMN senderLon REAL
+ALTER TABLE pskreporter_staged ADD COLUMN receiverLat REAL
+ALTER TABLE pskreporter_staged ADD COLUMN receiverLon REAL
