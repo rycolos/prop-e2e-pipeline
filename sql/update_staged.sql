@@ -1,3 +1,11 @@
 INSERT INTO pskreporter_staged (sNR, commMode, frequency, senderCallsign, senderLocator, receiverCallsign, receiverLocator)
-SELECT sNR, mode, MHz, senderCallsign, senderLocator, receiverCallsign, receiverLocator
-FROM pskreporter_raw;
+SELECT 
+    CAST(sNR AS INTEGER),
+    mode,
+    CAST(MHz AS DOUBLE PRECISION),
+    senderCallsign,
+    senderLocator,
+    receiverCallsign,
+    receiverLocator
+FROM pskreporter_raw
+ON CONFLICT DO NOTHING;
