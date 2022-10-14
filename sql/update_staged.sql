@@ -1,6 +1,6 @@
 INSERT INTO pskreporter_staged (sNR, commMode, frequency, senderCallsign, senderLocator, receiverCallsign, receiverLocator)
 SELECT 
-    CAST(sNR AS INTEGER),
+    CAST(sNR AS INT),
     mode,
     CAST(MHz AS DOUBLE PRECISION),
     senderCallsign,
