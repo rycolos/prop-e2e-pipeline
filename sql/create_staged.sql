@@ -13,3 +13,5 @@ CREATE TABLE pskreporter_staged AS
 		CAST(NULL AS REAL) AS receiverLat,
 		CAST(NULL AS REAL) AS receiverLon
 	FROM pskreporter_raw
+
+ALTER TABLE pskreporter_staged ADD COLUMN id bigint GENERATED ALWAYS AS IDENTITY

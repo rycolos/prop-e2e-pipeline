@@ -1,5 +1,4 @@
 CREATE TABLE pskreporter_raw (
-    id INTEGER GENERATED ALWAYS AS IDENTITY,
     sNR TEXT NOT NULL,
     mode TEXT,
     MHz TEXT NOT NULL,
