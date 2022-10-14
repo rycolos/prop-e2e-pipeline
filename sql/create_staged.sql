@@ -6,11 +6,11 @@ CREATE TABLE pskreporter_staged AS
 		senderCallsign,
 		senderLocator,
 		receiverCallsign,
-		receiverLocator,
+		receiverLocator
 	FROM pskreporter_raw;
 
-ALTER TABLE pskreporter_staged ADD COLUMN id INTEGER GENERATED ALWAYS AS IDENTITY
-ALTER TABLE pskreporter_staged ADD COLUMN senderLat REAL
-ALTER TABLE pskreporter_staged ADD COLUMN senderLon REAL
-ALTER TABLE pskreporter_staged ADD COLUMN receiverLat REAL
-ALTER TABLE pskreporter_staged ADD COLUMN receiverLon REAL
+ALTER TABLE pskreporter_staged ADD COLUMN id INTEGER GENERATED ALWAYS AS IDENTITY;
+ALTER TABLE pskreporter_staged ADD COLUMN senderLat REAL;
+ALTER TABLE pskreporter_staged ADD COLUMN senderLon REAL;
+ALTER TABLE pskreporter_staged ADD COLUMN receiverLat REAL;
+ALTER TABLE pskreporter_staged ADD COLUMN receiverLon REAL;
