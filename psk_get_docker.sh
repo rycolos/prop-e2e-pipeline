@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CALLSIGN="KC1QBY"
-DATADIR="$(pwd)/psk_data"
+DATADIR="$(pwd)/postgres_data/psk_data"
 DB="prop-e2e"
 USER="postgres"
 
