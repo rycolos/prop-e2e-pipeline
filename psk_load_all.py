@@ -31,7 +31,7 @@ for item in pruned_f:
     ON CONFLICT DO NOTHING;"
     '''
 
-    cursor.execute(cmd)
+    cur.execute(cmd)
 
     for i in cursor.fetchall():
         print(i)
