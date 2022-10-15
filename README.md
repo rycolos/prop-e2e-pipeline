@@ -6,20 +6,13 @@
 3. Python 3
 
 ## Setup
-
-1. Run `docker compose up -d` to start the postgres container. Username, password, and database name are currently hardcoded in `docker-compose.yml`. 
-2. Create `pskreporter_raw` DB via docker exec:
-    1. `cat sql/create_raw.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e`
-3. Create `pskreporter_staged` DB via docker exec:
-    1. `cat sql/create_staged.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e`
-4. Create analysis views - `create_view_received.sql` and `create_view_received_by.sql`:
-    1. `cat sql/create_view_received.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e`
-    2. `cat sql/create_view_received_by.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e`
-5. Ingest any existing .csv files into `pskreporter_raw` and transform for `pskreporter_staged`.
-    1. `sudo python3 /home/kepler/prop-e2e-pipeline/psk_load_all.py`
-    2. `cat /home/kepler/prop-e2e-pipeline/sql/update_staged.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e`
-    3. `python3 /home/kepler/prop-e2e-pipeline/grid_to_latlon.py`
-    4. `cat /home/kepler/prop-e2e-pipeline/sql/latlon_to_distance.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e`
+### make all
+Runs all key tasks to build postgres container, create tabes and views, ingest initial dataset, and perform transformation.
+1. `clean` - Stops docker compose (if running) and removes containers
+2. `start` - Starts docker compose and brings up containers
+3. `create-base-tables` - Creates initial `pskreporter_raw` and `pskreporter_staged` tables
+4. `create-views` - Create analytics-ready views on `pskreporter_staged`
+5. `add-data` - Loads existing data from `postgres_data/psk_data` folder into `pskreporter_raw`, transforms and inserts into `pskreporter_staged`, performs a function to convert grid square > lat/lon conversion and inserts into `pskreporter_staged`, and performs a function to calculate station-to-station distance and inserts into `pskreporter_staged` 
 
 ## Maintenance
 
