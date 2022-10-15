@@ -39,6 +39,8 @@ cur.execute("SELECT id, senderLocator, senderLat, senderLon, receiverLocator, re
 result = cur.fetchall()
 
 print(f"Converting grid square to lat, lon...\n")
+sendCount = 0
+recvCount = 0
 
 for row in result:
     if row[2] is None or row[3] is None:
@@ -50,11 +52,12 @@ for row in result:
         except Exception:
             continue
         
-        print(sender, senderLat, senderLon)
+        #print(sender, senderLat, senderLon)
         
         cur.execute(f"UPDATE pskreporter_staged SET senderlat = {senderLat} WHERE id = {row[0]}")
         cur.execute(f"UPDATE pskreporter_staged SET senderlon = {senderLon} WHERE id = {row[0]}")
         conn.commit()
+        sendCount += 1
 
     if row[5] is None or row[6] is None:
         receiver = row[4]
@@ -65,11 +68,15 @@ for row in result:
         except Exception:
             continue
 
-        print(receiver, receiverLat, receiverLon) 
+        #print(receiver, receiverLat, receiverLon) 
         
         cur.execute(f"UPDATE pskreporter_staged SET receiverlat = {receiverLat} WHERE id = {row[0]}")
         cur.execute(f"UPDATE pskreporter_staged SET receiverlon = {receiverLon} WHERE id = {row[0]}")
         conn.commit()
+        recvCount += 1
+
+print(f"{sendCount} rows updated.")
+print(f"{recvCount} rows updated.")
 
 cur.close()
 conn.close()
