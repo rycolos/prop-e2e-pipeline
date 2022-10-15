@@ -38,6 +38,8 @@ cur = conn.cursor()
 cur.execute("SELECT id, senderLocator, senderLat, senderLon, receiverLocator, receiverLat, receiverLon FROM pskreporter_staged FOR UPDATE")
 result = cur.fetchall()
 
+print(f"Converting grid square to lat, lon...\n")
+
 for row in result:
     if row[2] is None or row[3] is None:
         sender = row[1]
