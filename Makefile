@@ -1,4 +1,5 @@
 all: clean start create-base-tables create-views add-data
+all-no-load: clean start create-base-tables create-views
 
 clean: 
 	@echo "Stopping docker and removing container"
