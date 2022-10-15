@@ -17,11 +17,12 @@
 ## Maintenance
 
 1. Pull 7d data dump daily from pskreporter, perform basic cleaning, and append to `pskreporter_raw`
-    1. Add the following to the root crontab: `0 8 * * * sh /home/kepler/prop-e2e-pipeline/psk_get_docker.sh`
-2. Perform a daily INSERT of `pskreporter_raw` into `pskreporter_staged`
-    1. Add the following to the root crontab: `0 9 * * * cat sql/update_staged.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e`
-3. Run a daily function to convert maidenhead grid square (`senderLocator` and `receiverLocator`) to lat/lon on `pskreporter_staged`
-    1. Add the following to the root crontab: `0 10 * * * python3 /home/kepler/prop-e2e-pipeline/grid_to_latlon.py`
+    1. Add the following to the root crontab: `0 4 * * * sh /home/kepler/prop-e2e-pipeline/psk_get_docker.sh`
+2. Run a daily function to convert maidenhead grid square (`senderLocator` and `receiverLocator`) to lat/lon on `pskreporter_staged`
+    1. Add the following to the root crontab: `0 5 * * * python3 /home/kepler/prop-e2e-pipeline/grid_to_latlon.py`
+3. Perform a daily INSERT of `pskreporter_raw` into `pskreporter_staged`
+    1. Add the following to the root crontab: `0 6 * * * cat sql/update_staged.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e`
+
 
 ## Tables
 
