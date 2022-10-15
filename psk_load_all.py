@@ -6,7 +6,7 @@ DOCKERDATADIR="/var/lib/postgresql/data/psk_data"
 DB="prop-e2e"
 USER="postgres"
 
-unpruned_f = os.listdir("/Users/ryanlaliberty/Desktop/Coding - Working On/prop-e2e-pipeline/")
+unpruned_f = os.listdir(DATADIR)
 pruned_f = []
 
 #remove from list if not ending in .sh
