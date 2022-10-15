@@ -18,16 +18,18 @@ Run `make all-no-load` to run all tasks except `add-data`
 
 ## Maintenance
 
+Add tasks for the following to the root crontab:
 1. Pull 7d data dump daily from pskreporter, perform basic cleaning, and append to `pskreporter_raw`
-    1. Add the following to the root crontab: `0 4 * * * sh /home/kepler/prop-e2e-pipeline/psk_get_docker.sh`
 2. Perform a daily INSERT of `pskreporter_raw` into `pskreporter_staged`
-    1. Add the following to the root crontab: `0 5 * * * cat /home/kepler/prop-e2e-pipeline/sql/update_staged.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e`
 3. Run a daily function to convert maidenhead grid square (`senderLocator` and `receiverLocator`) to lat/lon on `pskreporter_staged`
-    1. Add the following to the root crontab: `0 6 * * * python3 /home/kepler/prop-e2e-pipeline/grid_to_latlon.py`
 4. Run a daily function to calculate station-to-station distance on `pskreporter_staged`
-    1. Add the following to the root crontab: `0 7 * * * cat /home/kepler/prop-e2e-pipeline/sql/latlon_to_distance.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e`
-
-
+```
+0 4 * * *  printf "$(date)\n********************\n" >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
+0 4 * * * sh /home/kepler/prop-e2e-pipeline/psk_get_docker.sh >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
+30 4 * * * cat /home/kepler/prop-e2e-pipeline/sql/update_staged.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
+0 5 * * * python3 /home/kepler/prop-e2e-pipeline/grid_to_latlon.py >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
+30 5 * * * cat /home/kepler/prop-e2e-pipeline/sql/latlon_to_distance.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
+```
 
 ## Tables
 
