@@ -15,8 +15,8 @@
 4. Create analysis views - `create_view_received.sql` and `create_view_received_by.sql`:
     1. `cat sql/create_view_received.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e`
     2. `cat sql/create_view_received_by.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e`
-5. Ingest any existing .csv files into `pskreporter_raw`:`python3 /home/kepler/prop-e2e-pipeline/psk_load_all.py`
-    1. 
+5. Ingest any existing .csv files into `pskreporter_raw`:
+    1. `python3 /home/kepler/prop-e2e-pipeline/psk_load_all.py`
 
 ## Maintenance
 
