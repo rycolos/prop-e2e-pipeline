@@ -1,8 +1,8 @@
 import psycopg2
 
 def to_location(grid):
-    # convert maidenhead grid square to lat, lon
-    # from https://github.com/space-physics/maidenhead
+    # takes grid string and returns top-left lat, lon of grid square
+    # modified from https://github.com/space-physics/maidenhead
     
     grid = grid.strip().upper()
 
@@ -24,10 +24,6 @@ def to_location(grid):
     if N >= 6:
         lon += (ord(grid[4]) - Oa) * 5.0 / 60
         lat += (ord(grid[5]) - Oa) * 2.5 / 60
-     # fourth pair
-    if N >= 8:
-        lon += int(grid[6]) * 5.0 / 600
-        lat += int(grid[7]) * 2.5 / 600
     return lat, lon
 
 conn = psycopg2.connect(database="prop-e2e", host="192.168.1.91", user="postgres", password="postgres", port="5432")
@@ -39,7 +35,7 @@ result = cur.fetchall()
 for row in result:
     if row[2] is None or row[3] is None:
         sender = row[1]
-        sender = sender[0:8]
+        sender = sender[0:6]
         
         try:
             senderLat, senderLon = to_location(sender)
@@ -54,7 +50,7 @@ for row in result:
 
     if row[5] is None or row[6] is None:
         receiver = row[4]
-        receiver = receiver[0:8]
+        receiver = receiver[0:6]
         
         try:
             receiverLat, receiverLon = to_location(receiver)
