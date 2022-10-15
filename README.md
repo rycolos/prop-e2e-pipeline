@@ -12,7 +12,9 @@ Runs all key tasks to build postgres container, create tabes and views, ingest i
 2. `start` - Starts docker compose and brings up containers
 3. `create-base-tables` - Creates initial `pskreporter_raw` and `pskreporter_staged` tables
 4. `create-views` - Create analytics-ready views on `pskreporter_staged`
-5. `add-data` - Loads existing data from `postgres_data/psk_data` folder into `pskreporter_raw`, transforms and inserts into `pskreporter_staged`, performs a function to convert grid square > lat/lon conversion and inserts into `pskreporter_staged`, and performs a function to calculate station-to-station distance and inserts into `pskreporter_staged` 
+5. `add-data` - Loads existing data from `postgres_data/psk_data` folder into `pskreporter_raw`, transforms and inserts into `pskreporter_staged`, performs a function to convert grid square > lat/lon and inserts into `pskreporter_staged`, and performs a function to calculate station-to-station distance and inserts into `pskreporter_staged` 
+
+Run `make all-no-load` to run all tasks except `add-data`
 
 ## Maintenance
 
