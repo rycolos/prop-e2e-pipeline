@@ -33,8 +33,8 @@ for item in pruned_f:
 
     cur.execute(cmd)
 
-    for i in cur.fetchall():
-        print(i)
+    # for i in cur.fetchall():
+    #     print(i)
   
 conn.commit()
 conn.close()
