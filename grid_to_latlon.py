@@ -1,4 +1,4 @@
-import os, psycopg2, yaml
+import os, psycopg2, sys, yaml
 
 script_dir = os.path.dirname(__file__)
 config_path = f'{script_dir}/config.yaml'

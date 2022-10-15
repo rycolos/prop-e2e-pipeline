@@ -1,4 +1,4 @@
-import os, psycopg2, re, yaml
+import os, psycopg2, re, sys, yaml
 
 DATADIR = '/home/kepler/prop-e2e-pipeline/postgres_data/psk_data'
 DOCKERDATADIR = '/var/lib/postgresql/data/psk_data'
