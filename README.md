@@ -35,3 +35,11 @@ Filtered view on `pskreporter_staged` to only show signals received at my statio
 **received_by**
 
 Filtered view on `pskreporter_staged` to only show signals of mine that have been received by other stations.
+
+### Example Analysis Queries
+
+**Median signal-to-noise ratio**
+```
+SELECT PERCENTILE_CONT(.5) WITHIN GROUP(ORDER BY snr) FROM received
+SELECT PERCENTILE_CONT(.5) WITHIN GROUP(ORDER BY snr) FROM received_by
+```
