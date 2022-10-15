@@ -1,12 +1,14 @@
-INSERT INTO pskreporter_staged (sNR, commMode, frequency, rxTime, senderCallsign, senderLocator, receiverCallsign, receiverLocator)
+INSERT INTO pskreporter_staged (sNR, commMode, frequency, rxTime_utc, senderCallsign, senderLocator, receiverCallsign, receiverLocator)
 SELECT 
     CAST(sNR AS INT),
     mode,
     CAST(MHz AS DOUBLE PRECISION),
-    rxTime,
+    TO_TIMESTAMP(rxtime, 'YYYY-MM-DD HH24:MI:SS') AT TIME ZONE 'UTC',
     senderCallsign,
     senderLocator,
     receiverCallsign,
     receiverLocator
 FROM pskreporter_raw
 ON CONFLICT DO NOTHING;
+
+SELECT TO_TIMESTAMP(rxtime, 'YYYY-MM-DD HH24:MI:SS') AT TIME ZONE 'UTC' AS rxtime_utc FROM received_by
