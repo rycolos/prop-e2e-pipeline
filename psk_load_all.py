@@ -28,7 +28,7 @@ for item in pruned_f:
     WITH (FORMAT CSV, HEADER, DELIMITER ','); \
     INSERT INTO pskreporter_raw \
     SELECT * FROM tmp_table \
-    ON CONFLICT DO NOTHING;"
+    ON CONFLICT DO NOTHING;
     '''
 
     cur.execute(cmd)
