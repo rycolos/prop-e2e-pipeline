@@ -1,5 +1,11 @@
 import psycopg2
 
+DB = 'prop-e2e'
+USER = 'postgres'
+PW = 'postgres'
+HOST = '192.168.1.91'
+PORT = '5432'
+
 def to_location(grid):
     # takes grid string and returns top-left lat, lon of grid square
     # modified from https://github.com/space-physics/maidenhead
@@ -26,9 +32,9 @@ def to_location(grid):
         lat += (ord(grid[5]) - Oa) * 2.5 / 60
     return lat, lon
 
-conn = psycopg2.connect(database="prop-e2e", host="192.168.1.91", user="postgres", password="postgres", port="5432")
-
+conn = psycopg2.connect(database=DB, host=HOST, user=USER, password=PW, port=PORT)
 cur = conn.cursor()
+
 cur.execute("SELECT id, senderLocator, senderLat, senderLon, receiverLocator, receiverLat, receiverLon FROM pskreporter_staged FOR UPDATE")
 result = cur.fetchall()
 
