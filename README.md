@@ -32,7 +32,7 @@ Raw daily dump from https://pskreporter.info, filtered for my callsign (`KC1QBY`
 
 **pskreporter_staged**
 
-Pre-analysis table with data types updated, irrelevant columns removed, columns renamed for clarity, an auto-incrementing `id` column added, and lat/lon columns added for conversion from maidenhead grid columns (`senderLocator` and `receiverLocator`).
+Pre-analysis table with data types updated, irrelevant columns removed, columns renamed for clarity, an auto-incrementing `id` column added, lat/lon columns added for conversion from maidenhead grid columns (`senderLocator` and `receiverLocator`), and distance calculated between sending and receiving stations.
 
 **received**
 
