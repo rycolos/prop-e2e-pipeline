@@ -1,4 +1,4 @@
-all: clean start create-base-tables create-views add-data
+all: clean start create-base-tables create-views add-data make-cron
 
 clean: 
 	@echo "Stopping docker and removing container"
