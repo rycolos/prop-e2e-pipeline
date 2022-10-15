@@ -10,5 +10,3 @@ SELECT
     receiverLocator
 FROM pskreporter_raw
 ON CONFLICT DO NOTHING;
-
-SELECT TO_TIMESTAMP(rxtime, 'YYYY-MM-DD HH24:MI:SS') AT TIME ZONE 'UTC' AS rxtime_utc FROM received_by
