@@ -43,3 +43,9 @@ Filtered view on `pskreporter_staged` to only show signals of mine that have bee
 SELECT PERCENTILE_CONT(.5) WITHIN GROUP(ORDER BY snr) FROM received
 SELECT PERCENTILE_CONT(.5) WITHIN GROUP(ORDER BY snr) FROM received_by
 ```
+
+**Mapping of received_by stations**
+`SELECT receiverLat as lat, receiverLon as lon FROM received_by`
+
+Visualized with plotly and pandas:
+<img src="https://i.imgur.com/z8cbSwe.png">
