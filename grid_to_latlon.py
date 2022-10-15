@@ -13,14 +13,14 @@ def to_location(grid):
     Oa = ord("A")
     lon = -180.0
     lat = -90.0
-    # first pair
+    # first pair - world
     lon += (ord(grid[0]) - Oa) * 20
     lat += (ord(grid[1]) - Oa) * 10
-    # second pair
+    # second pair - region
     if N >= 4:
         lon += int(grid[2]) * 2
         lat += int(grid[3]) * 1
-     # third pair
+     # third pair - metro
     if N >= 6:
         lon += (ord(grid[4]) - Oa) * 5.0 / 60
         lat += (ord(grid[5]) - Oa) * 2.5 / 60
