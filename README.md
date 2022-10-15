@@ -8,8 +8,8 @@
 ## Setup
 
 1. Run `docker compose up -d` to start the postgres container. Username, password, and database name are currently hardcoded in `docker-compose.yml`. 
-2. Create `pskreporter_raw` DB via docker shell: `cat sql/create_raw.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e`
-3. Create `pskreporter_staged` DB docker via docker shell: `cat sql/create_staged.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e`
+2. Create `pskreporter_raw` DB via docker exec: `cat sql/create_raw.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e`
+3. Create `pskreporter_staged` DB via docker exec: `cat sql/create_staged.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e`
 4. Create analysis views - `create_view_received.sql` and `create_view_received_by.sql`:
     1. `cat sql/create_view_received.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e`
     2. `cat sql/create_view_received_by.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e`
