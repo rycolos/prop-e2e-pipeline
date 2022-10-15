@@ -1,12 +1,29 @@
-import os, psycopg2, re
+import os, psycopg2, re, yaml
 
 DATADIR = '/home/kepler/prop-e2e-pipeline/postgres_data/psk_data'
 DOCKERDATADIR = '/var/lib/postgresql/data/psk_data'
-DB = 'prop-e2e'
-USER = 'postgres'
-PW = 'postgres'
-HOST = '192.168.1.91'
-PORT = '5432'
+
+script_dir = os.path.dirname(__file__)
+config_path = f'{script_dir}/config.yaml'
+
+def config_parse(config_path):
+    #Parse yaml config file for db, user, pw, host, port
+    try:
+        with open(config_path, 'r') as file:
+            config_file = yaml.safe_load(file)
+    except FileNotFoundError as e:
+        print(f'File {config_path} not found. Exiting.')
+        sys.exit(1)
+    try:
+        db = config_file['database_info']['database']
+        user = config_file['database_info']['username']
+        pw = config_file['database_info']['password']
+        host = config_file['database_info']['host']
+        port = config_file['database_info']['port']
+    except KeyError as e:
+        print(f'Config missing key: {e}. Exiting.')
+        sys.exit(1)
+    return db, user, pw, host, port
 
 unpruned_f = os.listdir(DATADIR)
 pruned_f = []
@@ -18,7 +35,9 @@ for index, item in enumerate(unpruned_f):
 
 print(f"Uploading...\n{pruned_f}")
 
-conn = psycopg2.connect(database=DB, host=HOST, user=USER, password=PW, port=PORT)
+db, user, pw, host, port = config_parse(config_path)
+
+conn = psycopg2.connect(database=db, host=host, user=user, password=pw, port=port)
 cur = conn.cursor()
 
 for item in pruned_f:
