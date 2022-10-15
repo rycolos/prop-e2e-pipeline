@@ -6,7 +6,7 @@
 3. Python 3
 
 ## Setup
-### make all
+### Run `make all`
 Runs all key tasks to build postgres container, create tabes and views, ingest initial dataset, and perform transformation.
 1. `clean` - Stops docker compose (if running) and removes containers
 2. `start` - Starts docker compose and brings up containers
