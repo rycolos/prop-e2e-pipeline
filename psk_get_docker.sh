@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CALLSIGN="KC1QBY"
-DATADIR="$(pwd)/postgres_data/psk_data"
+DATADIR="/home/kepler/prop-e2e-pipeline/postgres_data/psk_data"
 DOCKERDATADIR="/var/lib/postgresql/data/psk_data"
 DB="prop-e2e"
 USER="postgres"
@@ -12,6 +12,7 @@ mkdir -p "$DATADIR"
 echo "Getting latest data..."
 wget "https://pskreporter.info/cgi-bin/pskdata.pl?callsign=$CALLSIGN" -O "$DATADIR"/temp.zip
 unzip -d "$DATADIR" "$DATADIR"/temp.zip
+echo "Renaming file to $(date +%Y-%m-%d)_psk.csv..."
 mv "$DATADIR"/psk_data.csv "$DATADIR"/$(date +%Y-%m-%d)_psk.csv
 rm "$DATADIR"/temp.zip
 
