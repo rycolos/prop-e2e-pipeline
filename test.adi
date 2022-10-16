@@ -1,0 +1,1296 @@
+QRZLogbook download for kc1qby
+    Date: Sun Oct 16 11:09:28 2022
+    Bookid: 314054
+    Records: 25
+    <ADIF_VER:5>3.1.1
+    <PROGRAMID:10>QRZLogbook
+    <PROGRAMVERSION:3>2.0
+    <eoh>
+<app_qrzlog_logid:9>811848995
+<app_qrzlog_qsldate:8>20220918
+<app_qrzlog_status:1>C
+<band:3>20m
+<band_rx:3>20m
+<call:6>KI4WKM
+<cnty:8>KY,Boyle
+<comment:25>FT8  Sent: +00  Rcvd: -14
+<cont:2>NA
+<country:13>United States
+<cqz:1>5
+<distance:4>1257
+<dxcc:3>291
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>14.0758
+<freq_rx:7>14.0758
+<gridsquare:4>EM77
+<ituz:1>8
+<lat:11>N037 35.860
+<lon:11>W084 53.667
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:18>CHRIS A MCCOLLOUGH
+<qrzcom_qso_upload_date:8>20220917
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qso_date:8>20220917
+<qso_date_off:8>20220917
+<qth:10>Parksville
+<rst_rcvd:3>-14
+<rst_sent:3>+00
+<state:2>KY
+<station_callsign:6>KC1QBY
+<time_off:4>2039
+<time_on:4>2039
+<tx_pwr:2>15
+<eor>
+
+<app_qrzlog_logid:9>811848996
+<app_qrzlog_qsldate:8>20220917
+<app_qrzlog_status:1>C
+<band:3>20m
+<band_rx:3>20m
+<call:6>KF0ARQ
+<cnty:9>MO,Pettis
+<comment:25>FT8  Sent: -13  Rcvd: -11
+<cont:2>NA
+<country:13>United States
+<cqz:1>4
+<distance:4>1891
+<dxcc:3>291
+<email:19>donweldon@gmail.com
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>14.0758
+<freq_rx:7>14.0758
+<gridsquare:4>EM38
+<ituz:1>7
+<lat:11>N038 41.461
+<lon:11>W093 14.990
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:12>Don W Weldon
+<qrzcom_qso_upload_date:8>20220917
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qso_date:8>20220917
+<qso_date_off:8>20220917
+<qth:7>Sedalia
+<rst_rcvd:3>-11
+<rst_sent:3>-13
+<state:2>MO
+<station_callsign:6>KC1QBY
+<time_off:4>2034
+<time_on:4>2034
+<tx_pwr:2>15
+<eor>
+
+<app_qrzlog_logid:9>811848997
+<app_qrzlog_qsldate:8>20220917
+<app_qrzlog_status:1>C
+<band:3>20m
+<band_rx:3>20m
+<call:5>N9FXR
+<cnty:7>IL,Will
+<comment:25>FT8  Sent: +08  Rcvd: -06
+<cont:2>NA
+<country:13>United States
+<cqz:1>4
+<distance:4>1378
+<dxcc:3>291
+<email:16>N9FXR1@gmail.com
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>14.0752
+<freq_rx:7>14.0752
+<gridsquare:4>EN61
+<ituz:1>8
+<lat:11>N041 37.032
+<lon:11>W087 55.517
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:17>MICHAEL J CIOLINO
+<qrzcom_qso_upload_date:8>20220917
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qso_date:8>20220917
+<qso_date_off:8>20220917
+<qth:10>Homer Glen
+<rst_rcvd:3>-06
+<rst_sent:3>+08
+<state:2>IL
+<station_callsign:6>KC1QBY
+<time_off:4>2028
+<time_on:4>2028
+<tx_pwr:2>15
+<eor>
+
+<app_qrzlog_logid:9>811848998
+<app_qrzlog_qsldate:8>20220917
+<app_qrzlog_status:1>C
+<band:3>20m
+<band_rx:3>20m
+<call:6>KB5KYX
+<cnty:13>TX,Montgomery
+<comment:25>FT8  Sent: -10  Rcvd: -18
+<cont:2>NA
+<country:13>United States
+<cqz:1>4
+<distance:4>2502
+<dxcc:3>291
+<email:18>kb5kyx@hotmail.com
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>14.0757
+<freq_rx:7>14.0757
+<gridsquare:4>EM20
+<ituz:1>7
+<lat:11>N030 12.236
+<lon:11>W095 12.969
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:12>MARK A SMITH
+<qrzcom_qso_upload_date:8>20220917
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qso_date:8>20220917
+<qso_date_off:8>20220917
+<qth:9>NEW CANEY
+<rst_rcvd:3>-18
+<rst_sent:3>-10
+<state:2>TX
+<station_callsign:6>KC1QBY
+<time_off:4>2015
+<time_on:4>2015
+<tx_pwr:2>15
+<eor>
+
+<app_qrzlog_logid:9>820461270
+<app_qrzlog_qsldate:8>20221009
+<app_qrzlog_status:1>C
+<band:3>10m
+<band_rx:3>10m
+<call:5>AB0VD
+<cnty:8>CO,Adams
+<comment:25>FT8  Sent: -16  Rcvd: -08
+<cont:2>NA
+<country:13>United States
+<cqz:1>4
+<distance:4>2824
+<dxcc:3>291
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>28.0752
+<freq_rx:7>28.0752
+<gridsquare:4>DM79
+<ituz:1>7
+<lat:11>N039 53.181
+<lon:11>W105 00.621
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:19>Larry A Kleinsasser
+<qrzcom_qso_upload_date:8>20221009
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qso_date:8>20221008
+<qso_date_off:8>20221008
+<qth:10>Northglenn
+<rst_rcvd:3>-08
+<rst_sent:3>-16
+<state:2>CO
+<station_callsign:6>KC1QBY
+<time_off:4>1845
+<time_on:4>1845
+<tx_pwr:2>10
+<eor>
+
+<app_qrzlog_logid:9>820461272
+<app_qrzlog_status:1>N
+<band:3>10m
+<band_rx:3>10m
+<call:6>KD0UNI
+<cnty:9>ND,Traill
+<comment:25>FT8  Sent: +06  Rcvd: +08
+<cont:2>NA
+<country:13>United States
+<cqz:1>4
+<distance:4>2148
+<dxcc:3>291
+<email:17>pmr@gra.midco.net
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>28.0752
+<freq_rx:7>28.0752
+<gridsquare:4>EN17
+<ituz:1>7
+<lat:11>N047 38.126
+<lon:11>W097 27.746
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:13>Paul M Rayner
+<qrzcom_qso_upload_date:8>20221009
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qso_date:8>20221008
+<qso_date_off:8>20221008
+<qth:6>Hatton
+<rst_rcvd:3>+08
+<rst_sent:3>+06
+<state:2>ND
+<station_callsign:6>KC1QBY
+<time_off:4>1843
+<time_on:4>1843
+<tx_pwr:2>10
+<eor>
+
+<app_qrzlog_logid:9>820461274
+<app_qrzlog_status:1>N
+<band:3>10m
+<band_rx:3>10m
+<call:5>AC0DQ
+<cnty:13>NE,Washington
+<comment:25>FT8  Sent: -02  Rcvd: -10
+<cont:2>NA
+<country:13>United States
+<cqz:1>4
+<distance:4>2053
+<dxcc:3>291
+<email:14>ac0dq@arrl.net
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>28.0752
+<freq_rx:7>28.0752
+<gridsquare:4>EN11
+<ituz:1>7
+<lat:11>N041 28.807
+<lon:11>W096 06.273
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:15>Kenneth C Lemke
+<qrzcom_qso_upload_date:8>20221009
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qsl_via:34>DIRECT (NO SASE REQUIRED) OR LOTW.
+<qso_date:8>20221008
+<qso_date_off:8>20221008
+<qth:5>Blair
+<rst_rcvd:3>-10
+<rst_sent:3>-02
+<state:2>NE
+<station_callsign:6>KC1QBY
+<time_off:4>1842
+<time_on:4>1842
+<tx_pwr:2>10
+<eor>
+
+<app_qrzlog_logid:9>820461277
+<app_qrzlog_status:1>N
+<band:3>10m
+<band_rx:3>10m
+<call:4>KB6C
+<cnty:14>CA,Los Angeles
+<comment:25>FT8  Sent: +04  Rcvd: -08
+<cont:2>NA
+<country:13>United States
+<cqz:1>3
+<distance:4>4170
+<dxcc:3>291
+<email:18>kb6c@wirechief.com
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>28.0752
+<freq_rx:7>28.0752
+<gridsquare:4>DM04
+<ituz:1>6
+<lat:11>N034 11.764
+<lon:11>W118 31.405
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:15>DENNIS L HANLEY
+<qrzcom_qso_upload_date:8>20221009
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qso_date:8>20221008
+<qso_date_off:8>20221008
+<qth:6>Reseda
+<rst_rcvd:3>-08
+<rst_sent:3>+04
+<state:2>CA
+<station_callsign:6>KC1QBY
+<time_off:4>1840
+<time_on:4>1840
+<tx_pwr:2>10
+<eor>
+
+<app_qrzlog_logid:9>820461279
+<app_qrzlog_status:1>N
+<band:3>20m
+<band_rx:3>20m
+<call:4>K8BL
+<cnty:7>OH,Lake
+<comment:25>FT8  Sent: +00  Rcvd: -14
+<cont:2>NA
+<country:13>United States
+<cqz:1>4
+<distance:3>836
+<dxcc:3>291
+<email:18>K8BL@AMERITECH.NET
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>14.0759
+<freq_rx:7>14.0759
+<gridsquare:4>EN91
+<ituz:1>8
+<lat:11>N041 40.208
+<lon:11>W081 22.930
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:9>BOB LIDDY
+<qrzcom_qso_upload_date:8>20221009
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qsl_via:18>K8BL (W/SASE ONLY)
+<qso_date:8>20221008
+<qso_date_off:8>20221008
+<qth:6>MENTOR
+<rst_rcvd:3>-14
+<rst_sent:3>+00
+<state:2>OH
+<station_callsign:6>KC1QBY
+<time_off:4>1831
+<time_on:4>1831
+<tx_pwr:2>10
+<eor>
+
+<app_qrzlog_logid:9>820461280
+<app_qrzlog_qsldate:8>20221010
+<app_qrzlog_status:1>C
+<band:3>20m
+<band_rx:3>20m
+<call:4>K5ZF
+<cnty:10>FL,Collier
+<comment:25>FT8  Sent: -11  Rcvd: -22
+<cont:2>NA
+<country:13>United States
+<cqz:1>4
+<distance:4>1998
+<dxcc:3>291
+<email:19>K5ZF@protonmail.com
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>14.0758
+<freq_rx:7>14.0758
+<gridsquare:4>EL96
+<ituz:1>7
+<lat:11>N026 09.630
+<lon:11>W081 44.151
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:19>JOHN C GIBERSON, SR
+<qrzcom_qso_upload_date:8>20221009
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qso_date:8>20221008
+<qso_date_off:8>20221008
+<qth:6>Naples
+<rst_rcvd:3>-22
+<rst_sent:3>-11
+<state:2>FL
+<station_callsign:6>KC1QBY
+<time_off:4>1320
+<time_on:4>1320
+<tx_pwr:2>10
+<eor>
+
+<app_qrzlog_logid:9>820461283
+<app_qrzlog_status:1>N
+<band:3>20m
+<band_rx:3>20m
+<call:4>KR0P
+<cnty:12>NE,Lancaster
+<comment:25>FT8  Sent: -13  Rcvd: -16
+<cont:2>NA
+<country:13>United States
+<cqz:1>4
+<distance:4>2113
+<dxcc:3>291
+<email:9>j@KR0P.us
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>14.0754
+<freq_rx:7>14.0754
+<gridsquare:4>EN10
+<ituz:1>7
+<lat:11>N040 31.450
+<lon:11>W096 34.953
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:14>JOHN A MARDOCK
+<qrzcom_qso_upload_date:8>20221009
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qsl_via:62>Use LOTW as primary, but will QSL upon receipt of yours w/SASE
+<qso_date:8>20221008
+<qso_date_off:8>20221008
+<qth:5>Firth
+<rst_rcvd:3>-16
+<rst_sent:3>-13
+<state:2>NE
+<station_callsign:6>KC1QBY
+<time_off:4>1313
+<time_on:4>1313
+<tx_pwr:2>10
+<eor>
+
+<app_qrzlog_logid:9>820461284
+<app_qrzlog_qsldate:8>20221009
+<app_qrzlog_status:1>C
+<band:3>20m
+<band_rx:3>20m
+<call:5>K3ABE
+<cnty:9>PA,Lehigh
+<comment:25>FT8  Sent: -04  Rcvd: -12
+<cont:2>NA
+<country:13>United States
+<cqz:1>5
+<distance:3>383
+<dxcc:3>291
+<email:14>bill@k3abe.com
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>14.0754
+<freq_rx:7>14.0754
+<gridsquare:4>EL88
+<ituz:1>8
+<lat:11>N040 40.760
+<lon:11>W075 33.881
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:16>William M Snyder
+<qrzcom_qso_upload_date:8>20221009
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qso_date:8>20221008
+<qso_date_off:8>20221008
+<qth:6>Coplay
+<rst_rcvd:3>-12
+<rst_sent:3>-04
+<state:2>PA
+<station_callsign:6>KC1QBY
+<time_off:4>1304
+<time_on:4>1304
+<tx_pwr:2>10
+<eor>
+
+<app_qrzlog_logid:9>820461288
+<app_qrzlog_status:1>N
+<band:3>20m
+<band_rx:3>20m
+<call:6>KE4PMP
+<cnty:9>GA,Toombs
+<comment:25>FT8  Sent: -03  Rcvd: -13
+<cont:2>NA
+<country:13>United States
+<cqz:1>5
+<distance:4>1461
+<dxcc:3>291
+<email:16>ke4pmp@gmail.com
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>14.0755
+<freq_rx:7>14.0755
+<gridsquare:4>EM82
+<ituz:1>8
+<lat:11>N032 12.820
+<lon:11>W082 24.569
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:13>JONAH R RINER
+<qrzcom_qso_upload_date:8>20221009
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qsl_via:26>100 % DIRECT, LOTW OR EQSL
+<qso_date:8>20221008
+<qso_date_off:8>20221008
+<qth:7>VIDALIA
+<rst_rcvd:3>-13
+<rst_sent:3>-03
+<state:2>GA
+<station_callsign:6>KC1QBY
+<time_off:4>1301
+<time_on:4>1301
+<tx_pwr:2>10
+<eor>
+
+<app_qrzlog_logid:9>820461290
+<app_qrzlog_status:1>N
+<band:3>20m
+<band_rx:3>20m
+<call:5>W4UWC
+<cnty:12>KY,Jessamine
+<comment:25>FT8  Sent: -04  Rcvd: -11
+<cont:2>NA
+<country:13>United States
+<cqz:1>5
+<distance:4>1226
+<dxcc:3>291
+<email:15>k4uwc@yahoo.com
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>14.0755
+<freq_rx:7>14.0755
+<gridsquare:4>EM77
+<ituz:1>8
+<lat:11>N037 49.315
+<lon:11>W084 38.242
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:17>Marshall Dominick
+<qrzcom_qso_upload_date:8>20221009
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qso_date:8>20221008
+<qso_date_off:8>20221008
+<qth:13>NICHOLASVILLE
+<rst_rcvd:3>-11
+<rst_sent:3>-04
+<state:2>KY
+<station_callsign:6>KC1QBY
+<time_off:4>1259
+<time_on:4>1259
+<tx_pwr:2>10
+<eor>
+
+<app_qrzlog_logid:9>820461292
+<app_qrzlog_qsldate:8>20221009
+<app_qrzlog_status:1>C
+<band:3>17m
+<band_rx:3>17m
+<call:5>W4BXR
+<cnty:9>TN,Wilson
+<comment:25>FT8  Sent: +00  Rcvd: +01
+<cont:2>NA
+<country:13>United States
+<cqz:1>5
+<distance:4>1433
+<dxcc:3>291
+<email:15>glenn@w4bxr.com
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>18.1018
+<freq_rx:7>18.1018
+<gridsquare:4>EM66
+<ituz:1>8
+<lat:11>N036 07.685
+<lon:11>W086 07.652
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:12>Glenn A Lees
+<qrzcom_qso_upload_date:8>20221009
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qso_date:8>20221004
+<qso_date_off:8>20221004
+<qth:9>Watertown
+<rst_rcvd:3>+01
+<rst_sent:3>+00
+<state:2>TN
+<station_callsign:6>KC1QBY
+<time_off:4>1651
+<time_on:4>1651
+<tx_pwr:2>15
+<eor>
+
+<app_qrzlog_logid:9>822818009
+<app_qrzlog_status:1>N
+<band:3>20m
+<band_rx:3>20m
+<call:5>AC9XW
+<cnty:14>WI,Fond du Lac
+<comment:25>FT8  Sent: -09  Rcvd: -16
+<cont:2>NA
+<country:13>United States
+<cqz:1>4
+<distance:4>1441
+<dxcc:3>291
+<email:19>Ripondoug@gmail.com
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>14.0754
+<freq_rx:7>14.0754
+<gridsquare:4>EN53
+<ituz:1>8
+<lat:11>N043 50.419
+<lon:11>W088 49.623
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:17>DOUGLAS S IVERSON
+<qrzcom_qso_upload_date:8>20221015
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qso_date:8>20221015
+<qso_date_off:8>20221015
+<qth:5>RIPON
+<rst_rcvd:3>-16
+<rst_sent:3>-09
+<state:2>WI
+<station_callsign:6>KC1QBY
+<time_off:4>1944
+<time_on:4>1944
+<tx_pwr:2>15
+<eor>
+
+<app_qrzlog_logid:9>822818010
+<app_qrzlog_status:1>N
+<band:3>20m
+<band_rx:3>20m
+<call:6>MI0IKF
+<comment:25>FT8  Sent: -15  Rcvd: -24
+<cont:2>EU
+<country:16>Northern Ireland
+<cqz:2>14
+<distance:4>4854
+<dxcc:3>265
+<email:18>mi0ikf@hotmail.com
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>14.0753
+<freq_rx:7>14.0753
+<gridsquare:4>IO74
+<ituz:2>27
+<lat:11>N054 35.285
+<lon:11>W005 47.336
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:13>John Davidson
+<qrzcom_qso_upload_date:8>20221015
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qso_date:8>20221015
+<qso_date_off:8>20221015
+<qth:17>Dundonald Belfast
+<rst_rcvd:3>-24
+<rst_sent:3>-15
+<station_callsign:6>KC1QBY
+<time_off:4>1930
+<time_on:4>1930
+<tx_pwr:2>15
+<eor>
+
+<app_qrzlog_logid:9>822818011
+<app_qrzlog_status:1>N
+<band:3>20m
+<band_rx:3>20m
+<call:5>W3MTN
+<cnty:11>SC,Richland
+<comment:25>FT8  Sent: -07  Rcvd: -15
+<cont:2>NA
+<country:13>United States
+<cqz:1>5
+<distance:4>1197
+<dxcc:3>291
+<email:20>w3mtn.doug@gmail.com
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>14.0753
+<freq_rx:7>14.0753
+<gridsquare:4>EM94
+<ituz:1>8
+<lat:11>N034 13.576
+<lon:11>W080 50.859
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:10>Doug Brown
+<qrzcom_qso_upload_date:8>20221015
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qso_date:8>20221015
+<qso_date_off:8>20221015
+<qth:5>Elgin
+<rst_rcvd:3>-15
+<rst_sent:3>-07
+<state:2>SC
+<station_callsign:6>KC1QBY
+<time_off:4>1920
+<time_on:4>1920
+<tx_pwr:2>15
+<eor>
+
+<app_qrzlog_logid:9>822818012
+<app_qrzlog_status:1>N
+<band:3>20m
+<band_rx:3>20m
+<call:4>NS4J
+<cnty:11>VA,Stafford
+<comment:25>FT8  Sent: -05  Rcvd: +01
+<cont:2>NA
+<country:13>United States
+<cqz:1>5
+<distance:3>659
+<dxcc:3>291
+<email:18>ns4j@usislands.org
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>14.0753
+<freq_rx:7>14.0753
+<gridsquare:4>FM18
+<ituz:1>8
+<lat:11>N038 19.512
+<lon:11>W077 26.360
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:17>JAY F CHAMBERLAIN
+<qrzcom_qso_upload_date:8>20221015
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qso_date:8>20221015
+<qso_date_off:8>20221015
+<qth:14>FREDERICKSBURG
+<rst_rcvd:3>+01
+<rst_sent:3>-05
+<state:2>VA
+<station_callsign:6>KC1QBY
+<time_off:4>1914
+<time_on:4>1914
+<tx_pwr:2>15
+<eor>
+
+<app_qrzlog_logid:9>822818013
+<app_qrzlog_qsldate:8>20221015
+<app_qrzlog_status:1>C
+<band:3>20m
+<band_rx:3>20m
+<call:6>KC8BQN
+<cnty:11>MI,Leelanau
+<comment:25>FT8  Sent: -03  Rcvd: -17
+<cont:2>NA
+<country:13>United States
+<cqz:1>4
+<distance:4>1214
+<dxcc:3>291
+<email:16>KC8BQN@GMAIL.COM
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>14.0753
+<freq_rx:7>14.0753
+<gridsquare:4>EN75
+<ituz:1>8
+<lat:11>N045 01.007
+<lon:11>W085 45.472
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:17>LOWELL V JACOBSEN
+<qrzcom_qso_upload_date:8>20221015
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qso_date:8>20221015
+<qso_date_off:8>20221015
+<qth:6>LELAND
+<rst_rcvd:3>-17
+<rst_sent:3>-03
+<state:2>MI
+<station_callsign:6>KC1QBY
+<time_off:4>1909
+<time_on:4>1909
+<tx_pwr:2>15
+<eor>
+
+<app_qrzlog_logid:9>822818014
+<app_qrzlog_status:1>N
+<band:3>20m
+<band_rx:3>20m
+<call:6>VE3LON
+<comment:25>FT8  Sent: -08  Rcvd: -18
+<cont:2>NA
+<country:6>Canada
+<cqz:1>4
+<distance:3>818
+<dxcc:1>1
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>14.0753
+<freq_rx:7>14.0753
+<gridsquare:4>EN93
+<ituz:1>4
+<lat:11>N043 01.996
+<lon:11>W081 09.508
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:30>LONDON AMATEUR RADIO CLUB INC 
+<qrzcom_qso_upload_date:8>20221015
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qso_date:8>20221015
+<qso_date_off:8>20221015
+<qth:6>LONDON
+<rst_rcvd:3>-18
+<rst_sent:3>-08
+<state:2>ON
+<station_callsign:6>KC1QBY
+<time_off:4>1907
+<time_on:4>1907
+<tx_pwr:2>15
+<eor>
+
+<app_qrzlog_logid:9>822818015
+<app_qrzlog_qsldate:8>20221015
+<app_qrzlog_status:1>C
+<band:3>20m
+<band_rx:3>20m
+<call:4>NG8Y
+<cnty:9>OH,Warren
+<comment:25>FT8  Sent: +03  Rcvd: -09
+<cont:2>NA
+<country:13>United States
+<cqz:1>4
+<distance:4>1115
+<dxcc:3>291
+<email:20>njgarbenis@gmail.com
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>14.0752
+<freq_rx:7>14.0752
+<gridsquare:4>EM79
+<ituz:1>8
+<lat:11>N039 16.828
+<lon:11>W084 02.512
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:17>Neal Garbenis, Jr
+<qrzcom_qso_upload_date:8>20221015
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qso_date:8>20221015
+<qso_date_off:8>20221015
+<qth:6>Morrow
+<rst_rcvd:3>-09
+<rst_sent:3>+03
+<state:2>OH
+<station_callsign:6>KC1QBY
+<time_off:4>1850
+<time_on:4>1850
+<tx_pwr:2>15
+<eor>
+
+<app_qrzlog_logid:9>822818016
+<app_qrzlog_status:1>N
+<band:3>20m
+<band_rx:3>20m
+<call:5>K9IHM
+<cnty:12>TN,Jefferson
+<comment:25>FT8  Sent: -10  Rcvd: -12
+<cont:2>NA
+<country:13>United States
+<cqz:1>4
+<distance:4>1243
+<dxcc:3>291
+<email:18>jerryj46@gmail.com
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>14.0755
+<freq_rx:7>14.0755
+<gridsquare:4>EM86
+<ituz:1>8
+<lat:11>N036 04.836
+<lon:11>W083 34.084
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:17>JERROLD L JOHNSON
+<qrzcom_qso_upload_date:8>20221015
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qso_date:8>20221015
+<qso_date_off:8>20221015
+<qth:10>NEW MARKET
+<rst_rcvd:3>-12
+<rst_sent:3>-10
+<state:2>TN
+<station_callsign:6>KC1QBY
+<time_off:4>1841
+<time_on:4>1841
+<tx_pwr:2>15
+<eor>
+
+<app_qrzlog_logid:9>822818017
+<app_qrzlog_qsldate:8>20221015
+<app_qrzlog_status:1>C
+<band:3>10m
+<band_rx:3>10m
+<call:4>N4ST
+<cnty:11>NM,Torrance
+<comment:25>FT8  Sent: -15  Rcvd: -02
+<cont:2>NA
+<country:13>United States
+<cqz:1>5
+<distance:4>3146
+<dxcc:3>291
+<email:17>Hamshack@N4ST.com
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>28.0753
+<freq_rx:7>28.0753
+<gridsquare:4>DM64
+<ituz:1>8
+<lat:11>N034 33.548
+<lon:11>W106 21.231
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:17>JAMES E PRICE, JR
+<qrzcom_qso_upload_date:8>20221015
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qsl_via:57>LOTW, BURO OR DIRECT VIA PO Box 522, Mountainair NM 87036
+<qso_date:8>20221009
+<qso_date_off:8>20221009
+<qth:11>MOUNTAINAIR
+<rst_rcvd:3>-02
+<rst_sent:3>-15
+<state:2>NM
+<station_callsign:6>KC1QBY
+<time_off:4>1751
+<time_on:4>1751
+<tx_pwr:2>10
+<eor>
+
+<app_qrzlog_logid:9>822818018
+<app_qrzlog_qsldate:8>20221015
+<app_qrzlog_status:1>C
+<band:3>10m
+<band_rx:3>10m
+<call:5>N4PAZ
+<cnty:9>FL,Hendry
+<comment:25>FT8  Sent: -08  Rcvd: -09
+<cont:2>NA
+<country:13>United States
+<cqz:1>5
+<distance:4>1925
+<dxcc:3>291
+<email:17>n4paz@hotmail.com
+<eqsl_qsl_rcvd:1>N
+<eqsl_qsl_sent:1>N
+<freq:7>28.0748
+<freq_rx:7>28.0748
+<gridsquare:4>EL96
+<iota:6>NA-141
+<ituz:1>8
+<lat:11>N026 37.096
+<lon:11>W081 06.301
+<lotw_qsl_rcvd:1>N
+<lotw_qsl_sent:1>N
+<mode:3>FT8
+<my_city:9>ATTLEBORO
+<my_cnty:10>MA,Bristol
+<my_country:13>United States
+<my_cq_zone:1>5
+<my_gridsquare:6>FN41iw
+<my_itu_zone:1>8
+<my_lat:11>N041 56.563
+<my_lon:11>W071 17.235
+<my_name:14>RYAN LALIBERTY
+<my_state:2>MA
+<name:11>JUAN FELIPE
+<qrzcom_qso_upload_date:8>20221015
+<qrzcom_qso_upload_status:1>Y
+<qsl_rcvd:1>N
+<qsl_sent:1>N
+<qsl_via:30>QSL VIA EQSL, DIRECT OR BUREAU
+<qso_date:8>20221009
+<qso_date_off:8>20221009
+<qth:9>Clewiston
+<rst_rcvd:3>-09
+<rst_sent:3>-08
+<state:2>FL
+<station_callsign:6>KC1QBY
+<time_off:4>1741
+<time_on:4>1741
+<tx_pwr:2>10
+<eor>
+
