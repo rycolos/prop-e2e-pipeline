@@ -1,7 +1,7 @@
 import os, psycopg2, re, sys, yaml
 
-DATADIR = '/home/kepler/prop-e2e-pipeline/postgres_data/psk_data'
-DOCKERDATADIR = '/var/lib/postgresql/data/psk_data'
+data_dir = '/home/kepler/prop-e2e-pipeline/postgres_data/psk_data'
+docker_data_dir = '/var/lib/postgresql/data/psk_data'
 
 script_dir = os.path.dirname(__file__)
 config_path = f'{script_dir}/config.yaml'
@@ -25,34 +25,48 @@ def config_parse(config_path):
         sys.exit(1)
     return db, user, pw, host, port
 
-unpruned_f = os.listdir(DATADIR)
-pruned_f = []
+def list_psk_csv(data_dir):
+    #get list of csv files in dir
+    pruned_f = []
+    unpruned_f = os.listdir(data_dir)
 
-#remove from list if not ending in .sh
-for index, item in enumerate(unpruned_f):
-    if re.match('^.*\.csv$', item):
-        pruned_f.append(item)
+    #remove from list if not ending in psk.csv
+    for index, item in enumerate(unpruned_f):
+        if re.match('^.*psk\.csv$', item):
+            pruned_f.append(item)
 
-print(f"Uploading...\n{pruned_f}")
+    return pruned_f
 
-db, user, pw, host, port = config_parse(config_path)
+def copy_all(db, host, user, pw, port, docker_data_dir, pruned_f):
+    #connect to db and execute query, takes in pruned_f and db info
+    conn = psycopg2.connect(database=db, host=host, user=user, password=pw, port=port)
+    cur = conn.cursor()
 
-conn = psycopg2.connect(database=db, host=host, user=user, password=pw, port=port)
-cur = conn.cursor()
+    for item in pruned_f:
+        query = f'''
+        CREATE TEMP TABLE tmp_table ON COMMIT DROP AS SELECT * FROM pskreporter_raw; \
+        COPY tmp_table \
+        FROM '{docker_data_dir}/{item}' \
+        WITH (FORMAT CSV, HEADER, DELIMITER ','); \
+        INSERT INTO pskreporter_raw \
+        SELECT * FROM tmp_table \
+        ON CONFLICT DO NOTHING;
+        '''
 
-for item in pruned_f:
-    query = f'''
-    CREATE TEMP TABLE tmp_table ON COMMIT DROP AS SELECT * FROM pskreporter_raw; \
-    COPY tmp_table \
-    FROM '{DOCKERDATADIR}/{item}' \
-    WITH (FORMAT CSV, HEADER, DELIMITER ','); \
-    INSERT INTO pskreporter_raw \
-    SELECT * FROM tmp_table \
-    ON CONFLICT DO NOTHING;
-    '''
+        cur.execute(query)
+        conn.commit()
 
-    cur.execute(query)
-    conn.commit()
+    cur.close()
+    conn.close()
 
-cur.close()
-conn.close()
+def main():
+    db, user, pw, host, port = config_parse(config_path)
+
+    pruned_f = list_psk_csv(data_dir)
+
+    print(f'Uploading...\n{pruned_f}')
+
+    copy_all(db, host, user, pw, port, docker_data_dir, pruned_f)
+
+if __name__ == '__main__':
+    main()

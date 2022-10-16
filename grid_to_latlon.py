@@ -30,9 +30,9 @@ def to_location(grid):
 
     N = len(grid)
     if not 8 >= N >= 2 and N % 2 == 0:
-        raise ValueError("Maidenhead locator requires 2-8 characters, even number of characters")
+        raise ValueError('Maidenhead locator requires 2-8 characters, even number of characters')
 
-    Oa = ord("A")
+    Oa = ord('A')
     lon = -180.0
     lat = -90.0
     # first pair - world
@@ -48,53 +48,57 @@ def to_location(grid):
         lat += (ord(grid[5]) - Oa) * 2.5 / 60
     return lat, lon
 
-db, user, pw, host, port = config_parse(config_path)
+def parse_and_convert(db, host, user, pw, port):
+    conn = psycopg2.connect(database=db, host=host, user=user, password=pw, port=port)
+    cur = conn.cursor()
+    cur.execute('SELECT id, senderLocator, senderLat, senderLon, receiverLocator, receiverLat, receiverLon FROM pskreporter_staged FOR UPDATE')
+    result = cur.fetchall()
 
-conn = psycopg2.connect(database=db, host=host, user=user, password=pw, port=port)
-cur = conn.cursor()
+    sendCount = 0
+    recvCount = 0
 
-cur.execute("SELECT id, senderLocator, senderLat, senderLon, receiverLocator, receiverLat, receiverLon FROM pskreporter_staged FOR UPDATE")
-result = cur.fetchall()
+    for row in result:
+        if row[2] is None or row[3] is None:
+            sender = row[1]
+            sender = sender[0:6]
+            
+            try:
+                senderLat, senderLon = to_location(sender)
+            except Exception:
+                continue
+                    
+            cur.execute(f'UPDATE pskreporter_staged SET senderlat = {senderLat} WHERE id = {row[0]}')
+            cur.execute(f'UPDATE pskreporter_staged SET senderlon = {senderLon} WHERE id = {row[0]}')
+            conn.commit()
+            sendCount += 1
 
-print(f"Converting grid square to lat, lon...\n")
-sendCount = 0
-recvCount = 0
+        if row[5] is None or row[6] is None:
+            receiver = row[4]
+            receiver = receiver[0:6]
+            
+            try:
+                receiverLat, receiverLon = to_location(receiver)
+            except Exception:
+                continue
+            
+            cur.execute(f'UPDATE pskreporter_staged SET receiverlat = {receiverLat} WHERE id = {row[0]}')
+            cur.execute(f'UPDATE pskreporter_staged SET receiverlon = {receiverLon} WHERE id = {row[0]}')
+            conn.commit()
+            recvCount += 1
+    
+    cur.close()
+    conn.close()
+    return sendCount, recvCount
 
-for row in result:
-    if row[2] is None or row[3] is None:
-        sender = row[1]
-        sender = sender[0:6]
-        
-        try:
-            senderLat, senderLon = to_location(sender)
-        except Exception:
-            continue
-        
-        #print(sender, senderLat, senderLon)
-        
-        cur.execute(f"UPDATE pskreporter_staged SET senderlat = {senderLat} WHERE id = {row[0]}")
-        cur.execute(f"UPDATE pskreporter_staged SET senderlon = {senderLon} WHERE id = {row[0]}")
-        conn.commit()
-        sendCount += 1
+def main():
+    db, user, pw, host, port = config_parse(config_path)
+    
+    print(f'\nConverting grid square to lat, lon...\n')
 
-    if row[5] is None or row[6] is None:
-        receiver = row[4]
-        receiver = receiver[0:6]
-        
-        try:
-            receiverLat, receiverLon = to_location(receiver)
-        except Exception:
-            continue
+    sendCount, recvCount = parse_and_convert(db, host, user, pw, port)
 
-        #print(receiver, receiverLat, receiverLon) 
-        
-        cur.execute(f"UPDATE pskreporter_staged SET receiverlat = {receiverLat} WHERE id = {row[0]}")
-        cur.execute(f"UPDATE pskreporter_staged SET receiverlon = {receiverLon} WHERE id = {row[0]}")
-        conn.commit()
-        recvCount += 1
+    print(f'{sendCount} sender rows updated.\n')
+    print(f'{recvCount} receiver rows updated.\n')
 
-print(f"{sendCount} rows updated.")
-print(f"{recvCount} rows updated.")
-
-cur.close()
-conn.close()
+if __name__ == '__main__':
+    main()
