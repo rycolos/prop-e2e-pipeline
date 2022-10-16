@@ -39,7 +39,7 @@ Raw daily dump from https://pskreporter.info, filtered for my callsign (`KC1QBY`
 
 **pskreporter_staged**
 
-Pre-analysis table with data types updated, irrelevant columns removed, columns renamed for clarity, an auto-incrementing `id` column added, lat/lon columns added for conversion from maidenhead grid columns (`senderLocator` and `receiverLocator`), and distance calculated between sending and receiving stations.
+Pre-analysis table with data types updated, irrelevant columns removed, columns renamed for clarity, and an auto-incrementing `id` column added. Three derived data colums are added: (1) sender/receiver latitude and (2) sender/receiver longitude are populated via a daily python scripts that convert maidenhead grid locator to lat/lon and (3) station-to-station distance is populated via a daily sql script.
 
 **received**
 
