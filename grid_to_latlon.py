@@ -51,7 +51,7 @@ def to_location(grid):
 def parse_and_convert(db, host, user, pw, port):
     conn = psycopg2.connect(database=db, host=host, user=user, password=pw, port=port)
     cur = conn.cursor()
-    cur.execute('SELECT id, senderLocator, senderLat, senderLon, receiverLocator, receiverLat, receiverLon FROM pskreporter_staged FOR UPDATE')
+    cur.execute('SELECT senderLocator, senderLat, senderLon, receiverLocator, receiverLat, receiverLon FROM pskreporter_staged FOR UPDATE')
     result = cur.fetchall()
 
     sendCount = 0
