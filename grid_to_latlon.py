@@ -58,8 +58,8 @@ def parse_and_convert(db, host, user, pw, port):
     recvCount = 0
 
     for row in result:
-        if row[2] is None or row[3] is None:
-            sender = row[1]
+        if row[1] is None or row[2] is None:
+            sender = row[0]
             sender = sender[0:6]
             
             try:
@@ -72,8 +72,8 @@ def parse_and_convert(db, host, user, pw, port):
             conn.commit()
             sendCount += 1
 
-        if row[5] is None or row[6] is None:
-            receiver = row[4]
+        if row[4] is None or row[5] is None:
+            receiver = row[3]
             receiver = receiver[0:6]
             
             try:
