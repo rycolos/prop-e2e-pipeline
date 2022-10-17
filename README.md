@@ -1,5 +1,7 @@
 # **prop-e2e-pipeline**
 
+<img src="https://i.imgur.com/RBmN2Y7.png">
+
 ## Tooling
 1. PostgresSQL
 2. Docker, Docker Compose
