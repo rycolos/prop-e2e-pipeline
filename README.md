@@ -1,6 +1,6 @@
 # **prop-e2e-pipeline**
 
-<img src="https://i.imgur.com/RBmN2Y7.png" width="400">
+<img src="https://i.imgur.com/RBmN2Y7.png" width="800">
 
 ## Tooling
 1. PostgresSQL
