@@ -1,4 +1,5 @@
 CREATE TABLE pskreporter_staged (
+    id BIGINT GENERATED ALWAYS AS IDENTITY,
     sNR INT,
     commMode TEXT,
     frequency DOUBLE PRECISION,
