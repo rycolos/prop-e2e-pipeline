@@ -1,11 +1,16 @@
 # **prop-e2e-pipeline**
 
+## Objective
+As an amateur radio operator, I am frequently experimenting with antennas and new communication modes. I would like to begin quantifying these experiments to analyze how different variables affect my signal propagation. 
+
+## High-level data flow
 <img src="https://i.imgur.com/RBmN2Y7.png" width="800">
 
 ## Tooling
-1. PostgresSQL
+1. PostgreSQL
 2. Docker, Docker Compose
 3. Python 3
+4. Grafana, Prometheus
 
 ## Setup
 ### Run `make all`
