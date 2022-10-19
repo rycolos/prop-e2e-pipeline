@@ -1,2 +1,2 @@
 DROP TABLE pskreporter_raw;
-DROP TABLE CASCADE pskreporter_staged;
+DROP TABLE pskreporter_staged CASCADE;
