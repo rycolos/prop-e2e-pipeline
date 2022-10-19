@@ -1,5 +1,4 @@
 CREATE TABLE pskreporter_raw (
-    test TEXT,
     id BIGINT GENERATED ALWAYS AS IDENTITY,
     sNR TEXT NOT NULL,
     mode TEXT,
