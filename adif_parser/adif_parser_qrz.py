@@ -78,6 +78,7 @@ def extract_adif_column(adif_file, col):
         return matches
     else:
         return None
+        
 def parse_adif(filename):
    #comment out unwanted rows
    #need a better way to handle rows that don't exist
