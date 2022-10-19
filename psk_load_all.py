@@ -48,8 +48,8 @@ def copy_all(db, host, user, pw, port, docker_data_dir, pruned_f):
         COPY tmp_table \
         FROM '{docker_data_dir}/{item}' \
         WITH (FORMAT CSV, HEADER, DELIMITER ','); \
-        INSERT INTO pskreporter_raw (snr, mode, mhz, rxtime, senderdxcc, flowstartseconds, sendercallsign, senderlocator, receivercallsign, receiverlocator, receiverAntennaInformation, senderDXCCADIF, submode) \
-        SELECT snr, mode, mhz, rxtime, senderdxcc, flowstartseconds, sendercallsign, senderlocator, receivercallsign, receiverlocator, receiverAntennaInformation, senderDXCCADIF, submode FROM tmp_table \
+        INSERT INTO pskreporter_raw \
+        SELECT * FROM tmp_table \
         ON CONFLICT DO NOTHING;
         '''
 
