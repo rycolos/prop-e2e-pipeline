@@ -12,7 +12,7 @@ CREATE TABLE pskreporter_raw (
     receiverAntennaInformation TEXT,
     senderDXCCADIF TEXT,
     submode TEXT,
-    id BIGINT GENERATED ALWAYS AS IDENTITY,
+    --id BIGINT GENERATED ALWAYS AS IDENTITY,
     insert_date TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     CONSTRAINT raw_prim_key PRIMARY KEY (rxTime, senderCallsign, receiverCallsign),
     CONSTRAINT raw_check_kc1qby CHECK (receiverCallsign LIKE '%KC1QBY%' OR senderCallsign LIKE '%KC1QBY%')
