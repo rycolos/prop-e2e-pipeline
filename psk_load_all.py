@@ -1,7 +1,7 @@
 import os, psycopg2, re, sys, yaml
 
-data_dir = '/home/kepler/prop-e2e-pipeline/postgres_data/psk_data'
-docker_data_dir = '/var/lib/postgresql/data/psk_data'
+data_dir = '/home/kepler/prop-e2e-pipeline/postgres_data/source_data'
+docker_data_dir = '/var/lib/postgresql/data/source_data'
 
 script_dir = os.path.dirname(__file__)
 config_path = f'{script_dir}/config.yaml'

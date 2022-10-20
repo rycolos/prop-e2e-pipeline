@@ -1,8 +1,8 @@
 #!/bin/bash
 
 CALLSIGN="KC1QBY"
-DATADIR="/home/kepler/prop-e2e-pipeline/postgres_data/psk_data"
-DOCKERDATADIR="/var/lib/postgresql/data/psk_data"
+DATADIR="/home/kepler/prop-e2e-pipeline/postgres_data/source_data"
+DOCKERDATADIR="/var/lib/postgresql/data/source_data"
 DB="prop-e2e"
 USER="postgres"
 
@@ -29,3 +29,4 @@ WITH (FORMAT CSV, HEADER, DELIMITER ','); \
 INSERT INTO pskreporter_raw (sNR, mode, mhz, rxTime, senderdxcc, flowstartseconds, senderCallsign, senderLocator, receiverCallsign, receiverLocator, receiverAntennaInformation, senderDXCCADIF, submode) \
 SELECT sNR, mode, mhz, rxTime, senderdxcc, flowstartseconds, senderCallsign, senderLocator, receiverCallsign, receiverLocator, receiverAntennaInformation, senderDXCCADIF, submode FROM tmp_table \
 ON CONFLICT DO NOTHING;"
+
