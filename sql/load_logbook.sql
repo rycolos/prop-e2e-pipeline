@@ -54,3 +54,5 @@ SELECT
 	tx_pwr 
 FROM tmp_log_table
 ON CONFLICT DO NOTHING;
+
+COMMIT;
