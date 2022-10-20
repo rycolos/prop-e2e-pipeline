@@ -19,7 +19,8 @@ Runs all key tasks to build postgres container, create tabes and views, ingest i
 2. `start` - Starts docker compose and brings up containers
 3. `create-base-tables` - Creates initial `pskreporter_raw` and `pskreporter_staged` tables
 4. `create-views` - Create analytics-ready views on `pskreporter_staged`
-5. `add-data` - Loads existing data from `postgres_data/psk_data` folder into `pskreporter_raw`, transforms and inserts into `pskreporter_staged`, performs a function to convert grid square > lat/lon and inserts into `pskreporter_staged`, and performs a function to calculate station-to-station distance and inserts into `pskreporter_staged` 
+5. `add-data` - Loads existing data from `postgres_data/psk_data` folder into `pskreporter_raw`, transforms and inserts into `pskreporter_staged`, performs a function to convert grid square > lat/lon and inserts into `pskreporter_staged`, and performs a function to calculate station-to-station distance and inserts into `pskreporter_staged`
+6. `drop` - Delete all tables 
 
 Run `make all-no-load` to run all tasks except `add-data`
 
@@ -28,12 +29,12 @@ Run `make all-no-load` to run all tasks except `add-data`
 Add tasks for the following to the root crontab:
 1. Pull 7d data dump daily from pskreporter, perform basic cleaning, and append to `pskreporter_raw`
 2. Perform a daily INSERT of `pskreporter_raw` into `pskreporter_staged`
-3. Run a daily function to convert maidenhead grid square (`senderLocator` and `receiverLocator`) to lat/lon on `pskreporter_staged`
+3. Run a daily function to convert maidenhead grid square (`sender_locator` and `receiver_locator`) to lat/lon on `pskreporter_staged`
 4. Run a daily function to calculate station-to-station distance on `pskreporter_staged`
 ```
 0 4 * * *  printf "$(date)\n********************\n" >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
 0 4 * * * sh /home/kepler/prop-e2e-pipeline/psk_get_docker.sh >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
-30 4 * * * cat /home/kepler/prop-e2e-pipeline/sql/update_staged.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
+30 4 * * * cat /home/kepler/prop-e2e-pipeline/sql/insert_staged_psk.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
 0 5 * * * python3 /home/kepler/prop-e2e-pipeline/grid_to_latlon.py >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
 30 5 * * * cat /home/kepler/prop-e2e-pipeline/sql/latlon_to_distance.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
 ```
@@ -66,7 +67,7 @@ SELECT PERCENTILE_CONT(.5) WITHIN GROUP(ORDER BY snr) FROM received_by
 
 **Mapping of received_by stations**
 ```
-SELECT receiverLat as lat, receiverLon as lon FROM received_by
+SELECT receiver_lat as lat, receiver_lon as lon FROM received_by
 ```
 Visualized with plotly and pandas:
 <img src="https://i.imgur.com/z8cbSwe.png">
