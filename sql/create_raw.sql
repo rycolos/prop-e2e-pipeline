@@ -20,8 +20,8 @@ CREATE TABLE IF NOT EXISTS pskreporter_raw (
 CREATE TABLE IF NOT EXISTS logbook_raw (
     app_qrzlog_logid TEXT,
     call TEXT,
-    frequency TEXT,
     country TEXT,
+    frequency TEXT,
     gridsquare TEXT,
     mode TEXT,
     my_country TEXT,
