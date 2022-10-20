@@ -1,4 +1,4 @@
-CREATE TABLE pskreporter_staged (
+CREATE TABLE IF NOT EXISTS pskreporter_staged (
     id BIGINT GENERATED ALWAYS AS IDENTITY,
     snr INT,
     comm_mode TEXT,
@@ -16,4 +16,28 @@ CREATE TABLE pskreporter_staged (
     insert_date TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     CONSTRAINT staged_prim_key PRIMARY KEY (rxtime_utc, sender_callsign, receiver_callsign),
     CONSTRAINT staged_check_kc1qby CHECK (receiver_callsign LIKE '%KC1QBY%' OR sender_callsign LIKE '%KC1QBY%')
-)
+);
+
+CREATE TABLE IF NOT EXISTS logbook_staged (
+    id BIGINT GENERATED ALWAYS AS IDENTITY,
+    qso_date ,
+    time_off ,
+    frequency DOUBLE PRECISION,
+    comm_mode TEXT,
+    receiver_callsign TEXT,
+    receiver_locator TEXT,
+    receiver_lat REAL,
+    receiver_lon REAL,
+    sender_callsign TEXT,
+    sender_locator TEXT,
+    sender_lat REAL,
+    sender_lon REAL,
+    distance_mi REAL,
+    rst_rcvd TEXT,
+    rst_sent TEXT,
+    tx_pwr INTEGER,
+    app_qrzlog_logid BIGINT,
+    qrzcom_qso_upload_date TEXT,
+    insert_date TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    CONSTRAINT raw_log_prim_key PRIMARY KEY (app_qrzlog_logid)
+);
