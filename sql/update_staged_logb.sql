@@ -7,7 +7,7 @@ SELECT
     call,
     gridsquare,
     station_callsign,
-    my_gridquare,
+    my_gridsquare,
     rst_rcvd,
     rst_sent,
     tx_pwr,
