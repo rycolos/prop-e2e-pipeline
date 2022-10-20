@@ -51,7 +51,7 @@ def to_location(grid):
 def parse_and_convert(db, host, user, pw, port):
     conn = psycopg2.connect(database=db, host=host, user=user, password=pw, port=port)
     cur = conn.cursor()
-    cur.execute('SELECT id, senderLocator, senderLat, senderLon, receiverLocator, receiverLat, receiverLon FROM pskreporter_staged FOR UPDATE')
+    cur.execute('SELECT id, sender_locator, sender_lat, sender_lon, receiver_locator, receiver_lat, receiver_lon FROM pskreporter_staged FOR UPDATE')
     result = cur.fetchall()
 
     sendCount = 0
@@ -67,8 +67,8 @@ def parse_and_convert(db, host, user, pw, port):
             except Exception:
                 continue
                     
-            cur.execute(f'UPDATE pskreporter_staged SET senderlat = {senderLat} WHERE id = {row[0]}')
-            cur.execute(f'UPDATE pskreporter_staged SET senderlon = {senderLon} WHERE id = {row[0]}')
+            cur.execute(f'UPDATE pskreporter_staged SET sender_lat = {senderLat} WHERE id = {row[0]}')
+            cur.execute(f'UPDATE pskreporter_staged SET sender_lon = {senderLon} WHERE id = {row[0]}')
             conn.commit()
             sendCount += 1
 
@@ -81,8 +81,8 @@ def parse_and_convert(db, host, user, pw, port):
             except Exception:
                 continue
             
-            cur.execute(f'UPDATE pskreporter_staged SET receiverlat = {receiverLat} WHERE id = {row[0]}')
-            cur.execute(f'UPDATE pskreporter_staged SET receiverlon = {receiverLon} WHERE id = {row[0]}')
+            cur.execute(f'UPDATE pskreporter_staged SET receiver_lat = {receiverLat} WHERE id = {row[0]}')
+            cur.execute(f'UPDATE pskreporter_staged SET receiver_lon = {receiverLon} WHERE id = {row[0]}')
             conn.commit()
             recvCount += 1
     
