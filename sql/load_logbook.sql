@@ -19,7 +19,7 @@ COPY tmp_table
 FROM '/home/kepler/prop-e2e-pipeline/adif_parser/adi-test.csv' 
 WITH (FORMAT CSV, HEADER, DELIMITER ','); 
 
-INSERT INTO pskreporter_raw (
+INSERT INTO logbook_raw (
 	app_qrzlog_logid, 
 	call, 
 	frequency, 
