@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS pskreporter_staged (
     receiver_lon REAL,
     distance_mi REAL,
     insert_date TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    CONSTRAINT staged_prim_key PRIMARY KEY (rxtime_utc, sender_callsign, receiver_callsign),
+    CONSTRAINT staged_psk_prim_key PRIMARY KEY (rxtime_utc, sender_callsign, receiver_callsign),
     CONSTRAINT staged_check_kc1qby CHECK (receiver_callsign LIKE '%KC1QBY%' OR sender_callsign LIKE '%KC1QBY%')
 );
 
@@ -39,5 +39,5 @@ CREATE TABLE IF NOT EXISTS logbook_staged (
     app_qrzlog_logid BIGINT,
     qrzcom_qso_upload_date TEXT,
     insert_date TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    CONSTRAINT raw_log_prim_key PRIMARY KEY (app_qrzlog_logid)
+    CONSTRAINT staged_log_prim_key PRIMARY KEY (app_qrzlog_logid)
 );
