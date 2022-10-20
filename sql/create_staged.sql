@@ -20,8 +20,8 @@ CREATE TABLE IF NOT EXISTS pskreporter_staged (
 
 CREATE TABLE IF NOT EXISTS logbook_staged (
     id BIGINT GENERATED ALWAYS AS IDENTITY,
-    qso_date ,
-    time_off ,
+    qso_date TEXT,
+    time_off TEXT,
     frequency DOUBLE PRECISION,
     comm_mode TEXT,
     receiver_callsign TEXT,
