@@ -22,7 +22,7 @@ create-views:
 	cat sql/create_view_received_by.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e
 
 add-data: 
-	@echo "Populating existing data"
+	@echo "Populating existing pskreporter data"
 	sudo python3 /home/kepler/prop-e2e-pipeline/psk_load_all.py
 	cat /home/kepler/prop-e2e-pipeline/sql/update_staged.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e
 	python3 /home/kepler/prop-e2e-pipeline/grid_to_latlon.py
