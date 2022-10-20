@@ -7,6 +7,7 @@ DB="prop-e2e"
 USER="postgres"
 FILE=$1
 
+#PASS CSV FILE IN AS ARG
 if [ $# -eq 0 ]; then
     echo "Please provide filename of .csv stored in $DATADIR"
     exit 1
