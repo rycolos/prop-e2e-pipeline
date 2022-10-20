@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS pskreporter_staged (
 
 CREATE TABLE IF NOT EXISTS logbook_staged (
     id BIGINT GENERATED ALWAYS AS IDENTITY,
-    qso_date TEXT,
+    qso_date DATE,
     time_off TEXT,
     frequency DOUBLE PRECISION,
     comm_mode TEXT,
@@ -33,11 +33,11 @@ CREATE TABLE IF NOT EXISTS logbook_staged (
     sender_lat REAL,
     sender_lon REAL,
     distance_mi REAL,
-    rst_rcvd TEXT,
-    rst_sent TEXT,
+    rst_rcvd INTEGER,
+    rst_sent INTEGER,
     tx_pwr INTEGER,
     app_qrzlog_logid BIGINT,
-    qrzcom_qso_upload_date TEXT,
+    qrzcom_qso_upload_date DATE,
     insert_date TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     CONSTRAINT staged_log_prim_key PRIMARY KEY (app_qrzlog_logid)
 );
