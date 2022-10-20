@@ -15,7 +15,7 @@ CREATE TEMP TABLE tmp_log_table ON COMMIT DROP AS SELECT
 	time_off, 
 	tx_pwr 
 FROM logbook_raw; 
-COPY tmp_log_able 
+COPY tmp_log_table 
 FROM '/home/kepler/prop-e2e-pipeline/adif_parser/adi-test.csv' 
 WITH (FORMAT CSV, HEADER, DELIMITER ','); 
 
@@ -54,5 +54,3 @@ SELECT
 	tx_pwr 
 FROM tmp_log_table
 ON CONFLICT DO NOTHING;
-
-COMMIT;
