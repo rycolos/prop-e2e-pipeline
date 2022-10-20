@@ -1,4 +1,4 @@
-CREATE TEMP TABLE tmp_table ON COMMIT DROP AS SELECT 
+CREATE TEMP TABLE tmp_log_table ON COMMIT DROP AS SELECT 
 	app_qrzlog_logid, 
 	call, 
 	frequency, 
@@ -15,7 +15,7 @@ CREATE TEMP TABLE tmp_table ON COMMIT DROP AS SELECT
 	time_off, 
 	tx_pwr 
 FROM logbook_raw; 
-COPY tmp_table 
+COPY tmp_log_able 
 FROM '/home/kepler/prop-e2e-pipeline/adif_parser/adi-test.csv' 
 WITH (FORMAT CSV, HEADER, DELIMITER ','); 
 
@@ -52,5 +52,5 @@ SELECT
 	station_callsign, 
 	time_off, 
 	tx_pwr 
-FROM tmp_table
+FROM tmp_log_table
 ON CONFLICT DO NOTHING;
