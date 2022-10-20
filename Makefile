@@ -11,13 +11,13 @@ start:
 
 create-base-tables:
 	@echo "Creating base tables"
-	sleep 5 
+	sleep 2 
 	cat sql/create_raw.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e
 	cat sql/create_staged.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e
 
 create-views:
 	@echo "Creating view tables"
-	sleep 5 
+	sleep 2 
 	cat sql/create_view_received.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e
 	cat sql/create_view_received_by.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e
 
