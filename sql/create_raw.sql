@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS logbook_raw (
     gridsquare TEXT,
     mode TEXT,
     my_country TEXT,
-    my_gridquare TEXT,
+    my_gridsquare TEXT,
     qrzcom_qso_upload_date TEXT,
     qso_date TEXT,
     rst_rcvd TEXT,
