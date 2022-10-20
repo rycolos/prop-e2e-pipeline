@@ -6,6 +6,11 @@ DB="prop-e2e"
 USER="postgres"
 FILE=$1
 
+if [ $# -eq 0 ]; then
+    echo "Please provide filename of .csv stored in $DATADIR"
+    exit 1
+fi
+
 mkdir -p "$DATADIR"
 
 #APPEND TO RAW DB
