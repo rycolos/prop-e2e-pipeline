@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS pskreporter_raw (
     receiverAntennaInformation TEXT,
     senderDXCCADIF TEXT,
     submode TEXT,
-    insertDate TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    insertion_timestamp TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     CONSTRAINT raw_psk_prim_key PRIMARY KEY (rxTime, senderCallsign, receiverCallsign),
     CONSTRAINT raw_check_kc1qby CHECK (receiverCallsign LIKE '%KC1QBY%' OR senderCallsign LIKE '%KC1QBY%')
 );
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS logbook_raw (
     station_callsign TEXT,
     time_off TEXT,
     tx_pwr TEXT,
-    insert_date TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    insertion_timestamp TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     CONSTRAINT raw_log_prim_key PRIMARY KEY (app_qrzlog_logid)
 );
 
