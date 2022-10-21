@@ -25,7 +25,7 @@ Runs all key tasks to build postgres container, create tabes and views, ingest i
 Run `make all-no-load` to run all tasks except `add-data`
 
 ## Maintenance
-
+### Automated pskreporter data ingest and transformation
 Add tasks for the following to the root crontab:
 1. Pull 7d data dump daily from pskreporter, perform basic cleaning, and append to `pskreporter_raw`
 2. Perform a daily INSERT of `pskreporter_raw` into `pskreporter_staged`
@@ -38,6 +38,12 @@ Add tasks for the following to the root crontab:
 0 5 * * * python3 /home/kepler/prop-e2e-pipeline/grid_to_latlon.py >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
 30 5 * * * cat /home/kepler/prop-e2e-pipeline/sql/latlon_to_distance.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
 ```
+
+### Manual logbook data ingest and transformation
+Logbook data is not available to be automatically retrieved and ingested. It requires a recurring manual process. On some cadence, the following tasks are required:
+1. Export logbook in ADIF format from qrz.com
+2. Convert ADIF fil to CSV with `adif_parser_qrz.py`
+3. Append logbook csv to `logbook_raw` table and copy records to `logbook_staged` table with `logb_get_docker.sh`
 
 ## Tables
 
@@ -56,6 +62,10 @@ Filtered view on `pskreporter_staged` to only show signals received at my statio
 **received_by**
 
 Filtered view on `pskreporter_staged` to only show signals of mine that have been received by other stations.
+
+**logbook_raw**
+
+**logbook_staged**
 
 ## Example Analysis Queries
 
