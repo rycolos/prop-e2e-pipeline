@@ -33,9 +33,9 @@ Add tasks for the following to the root crontab:
 4. Run a daily function to calculate station-to-station distance on `pskreporter_staged`
 ```
 0 4 * * *  printf "$(date)\n********************\n" >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
-0 4 * * * sh /home/kepler/prop-e2e-pipeline/psk_get_docker.sh >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
+0 4 * * * sh /home/kepler/prop-e2e-pipeline/scripts/psk_get_docker.sh >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
 30 4 * * * cat /home/kepler/prop-e2e-pipeline/sql/insert_staged_psk.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
-0 5 * * * python3 /home/kepler/prop-e2e-pipeline/grid_to_latlon.py >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
+0 5 * * * python3 /home/kepler/prop-e2e-pipeline/scripts/grid_to_latlon.py >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
 30 5 * * * cat /home/kepler/prop-e2e-pipeline/sql/latlon_to_distance.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
 ```
 
