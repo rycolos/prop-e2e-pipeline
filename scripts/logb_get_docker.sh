@@ -7,12 +7,15 @@ SCRIPTDIR="/home/kepler/prop-e2e-pipeline/scripts"
 DB="prop-e2e"
 USER="postgres"
 KEY="A02C-3B9A-CCCF-F366"
+SDATE=$(date +%Y-%m-%d -d "-7 days")
+EDATE=$(date +%Y-%m-%d)
 
 mkdir -p "$DATADIR"
 
 #GET FILE
 echo "Getting latest data..."
-curl "https://logbook.qrz.com/api?key=$KEY&action=fetch&option=all,type:adif" > "$DATADIR"/$(date +%Y-%m-%d)_logb.adi
+curl "https://logbook.qrz.com/api?key=$KEY&action=fetch&option=BETWEEN:$SDATE+$EDATE,type:adif" \
+> "$DATADIR"/$(date +%Y-%m-%d)_logb.adi
 
 #CLEAN WITH SED (replace &lt; and &gt; with < >)
 echo "Cleaning data..."
@@ -43,8 +46,3 @@ my_country, my_gridsquare, qrzcom_qso_upload_date, qso_date, rst_rcvd, \
 rst_sent, station_callsign, time_off, tx_pwr \
 FROM tmp_log_table \
 ON CONFLICT DO NOTHING;"
-
-#UPDATE logbook_staged
-echo "Updating logbook_staged table..."
-sleep 2
-cat $SQLDIR/insert_staged_logb.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -d $DB -U $USER 
