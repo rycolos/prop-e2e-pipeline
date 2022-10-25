@@ -20,7 +20,7 @@ sed -i -e 's/&lt;/</' -e 's/&gt;/>/' "$DATADIR"/$(date +%Y-%m-%d)_logb.adi
 
 #CONVERT TO CSV
 python3 "$SCRIPTDIR"/adif_parser/adif_parser_qrz.py "$DATADIR"/$(date +%Y-%m-%d)_logb.adi
-mv /home/kepler/prop-e2e-pipeline/scripts/*_logb.csv $DATADIR
+mv $SCRIPTDIR/adif_parser/$(date +%Y-%m-%d)_logb.csv $DATADIR
 
 #APPEND TO RAW DB
 echo "Appending to logbook_raw table..."
