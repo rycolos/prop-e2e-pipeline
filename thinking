@@ -5,9 +5,9 @@ logb_get_docker script does
 * copies to logbook_raw db
 
 MAKEFILE:
-* tables in create_base_tables
-* _____ in create_views
-* any existing _logb.csv files in add-data -- need logbook version of this script
+* tables in create_base_tables DONE
+* _____ in create_views - NEED TO UNDERSTAND BUSINESS CASE
+* any existing _logb.csv files in add-data (logb_load_all.py)
 * tables in drop
 
 CRONJOBS:

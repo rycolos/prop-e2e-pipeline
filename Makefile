@@ -23,10 +23,14 @@ create-views:
 
 add-data: 
 	@echo "Populating existing pskreporter data"
-	sudo python3 /home/kepler/prop-e2e-pipeline/psk_load_all.py
+	sudo python3 /home/kepler/prop-e2e-pipeline/scripts/psk_load_all.py
 	cat /home/kepler/prop-e2e-pipeline/sql/insert_staged_psk.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e
-	python3 /home/kepler/prop-e2e-pipeline/grid_to_latlon.py
+	python3 /home/kepler/prop-e2e-pipeline/scripts/grid_to_latlon.py
 	cat /home/kepler/prop-e2e-pipeline/sql/latlon_to_distance.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e
+
+	@echo "Populating existing logbook data"
+	sudo python3 /home/kepler/prop-e2e-pipeline/scripts/logb_load_all.py
+	cat /home/kepler/prop-e2e-pipeline/sql/insert_staged_logb.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e
 
 drop:
 	@echo "Dropping tables"
