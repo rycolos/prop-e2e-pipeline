@@ -25,24 +25,24 @@ sed -i -e 's/&lt;/</' -e 's/&gt;/>/' "$DATADIR"/$(date +%Y-%m-%d)_logb.adi
 python3 "$SCRIPTDIR"/adif_parser/adif_parser_qrz.py "$DATADIR"/$(date +%Y-%m-%d)_logb.adi
 mv $SCRIPTDIR/adif_parser/$(date +%Y-%m-%d)_logb.csv $DATADIR
 
-#APPEND TO RAW DB
-echo "Appending to logbook_raw table..."
-docker exec -i prop-e2e-pipeline-postgres-1 psql -d $DB -U $USER --command="CREATE TEMP TABLE tmp_log_table ON COMMIT DROP AS SELECT \
-app_qrzlog_logid, call, country, frequency, gridsquare, mode, \
-my_country, my_gridsquare, qrzcom_qso_upload_date, qso_date, \
-rst_rcvd, rst_sent, station_callsign, time_off, tx_pwr \
-FROM logbook_raw; \
-COPY tmp_log_table \
-FROM '$DOCKERDATADIR/$(date +%Y-%m-%d)_logb.csv' \
-WITH (FORMAT CSV, HEADER, DELIMITER ','); \
+# #APPEND TO RAW DB
+# echo "Appending to logbook_raw table..."
+# docker exec -i prop-e2e-pipeline-postgres-1 psql -d $DB -U $USER --command="CREATE TEMP TABLE tmp_log_table ON COMMIT DROP AS SELECT \
+# app_qrzlog_logid, call, country, frequency, gridsquare, mode, \
+# my_country, my_gridsquare, qrzcom_qso_upload_date, qso_date, \
+# rst_rcvd, rst_sent, station_callsign, time_off, tx_pwr \
+# FROM logbook_raw; \
+# COPY tmp_log_table \
+# FROM '$DOCKERDATADIR/$(date +%Y-%m-%d)_logb.csv' \
+# WITH (FORMAT CSV, HEADER, DELIMITER ','); \
 
-INSERT INTO logbook_raw ( \
-app_qrzlog_logid, call, country, frequency, gridsquare, mode, \
-my_country, my_gridsquare, qrzcom_qso_upload_date, qso_date, rst_rcvd, \
-rst_sent, station_callsign, time_off, tx_pwr ) \
+# INSERT INTO logbook_raw ( \
+# app_qrzlog_logid, call, country, frequency, gridsquare, mode, \
+# my_country, my_gridsquare, qrzcom_qso_upload_date, qso_date, rst_rcvd, \
+# rst_sent, station_callsign, time_off, tx_pwr ) \
 
-SELECT app_qrzlog_logid, call, country, frequency, gridsquare, mode, \
-my_country, my_gridsquare, qrzcom_qso_upload_date, qso_date, rst_rcvd, \
-rst_sent, station_callsign, time_off, tx_pwr \
-FROM tmp_log_table \
-ON CONFLICT DO NOTHING;"
+# SELECT app_qrzlog_logid, call, country, frequency, gridsquare, mode, \
+# my_country, my_gridsquare, qrzcom_qso_upload_date, qso_date, rst_rcvd, \
+# rst_sent, station_callsign, time_off, tx_pwr \
+# FROM tmp_log_table \
+# ON CONFLICT DO NOTHING;"
