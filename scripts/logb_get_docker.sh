@@ -47,4 +47,4 @@ ON CONFLICT DO NOTHING;"
 #UPDATE logbook_staged
 echo "Updating logbook_staged table..."
 sleep 2
-cat $SQLDIR/update_staged_logb.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -d $DB -U $USER 
+cat $SQLDIR/insert_staged_logb.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -d $DB -U $USER 
