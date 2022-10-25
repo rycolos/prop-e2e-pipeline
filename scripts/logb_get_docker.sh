@@ -7,7 +7,7 @@ SCRIPTDIR="/home/kepler/prop-e2e-pipeline/scripts"
 DB="prop-e2e"
 USER="postgres"
 KEY="A02C-3B9A-CCCF-F366"
-SDATE=$(date +%Y-%m-%d -d "-7 days")
+SDATE=$(date +%Y-%m-%d -d "-14 days")
 EDATE=$(date +%Y-%m-%d)
 
 mkdir -p "$DATADIR"
