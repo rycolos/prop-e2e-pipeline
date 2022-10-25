@@ -16,7 +16,7 @@ curl "https://logbook.qrz.com/api?key=$KEY&action=fetch&option=all,type:adif" > 
 
 #CLEAN WITH SED (replace &lt; and &gt; with < >)
 echo "Cleaning data..."
-sed -i '' -e 's/&lt;/</' -e 's/&gt;/>/' "$DATADIR"/$(date +%Y-%m-%d)_logb.adi
+sed -i -e 's/&lt;/</' -e 's/&gt;/>/' "$DATADIR"/$(date +%Y-%m-%d)_logb.adi
 
 #CONVERT TO CSV
 python3 "$SCRIPTDIR"/adif_parser/adif_parser_qrz.py "$DATADIR"/$(date +%Y-%m-%d)_logb.adi
