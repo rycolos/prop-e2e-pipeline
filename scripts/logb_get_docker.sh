@@ -3,17 +3,23 @@
 DATADIR="/home/kepler/prop-e2e-pipeline/postgres_data/source_data"
 DOCKERDATADIR="/var/lib/postgresql/data/source_data"
 SQLDIR="/home/kepler/prop-e2e-pipeline/sql"
+SCRIPTDIR="/home/kepler/prop-e2e-pipeline/scripts"
 DB="prop-e2e"
 USER="postgres"
-FILE=$1
-
-#PASS CSV FILE IN AS ARG
-if [ $# -eq 0 ]; then
-    echo "Please provide filename of .csv stored in $DATADIR"
-    exit 1
-fi
+KEY="A02C-3B9A-CCCF-F366"
 
 mkdir -p "$DATADIR"
+
+#GET FILE
+echo "Getting latest data..."
+curl "https://logbook.qrz.com/api?key=$KEY&action=fetch&option=all,type:adif" > "$DATADIR"/$(date +%Y-%m-%d)_logb.adi
+
+#CLEAN WITH SED (replace &lt; and &gt; with < >)
+echo "Cleaning data..."
+sed -i '' -e 's/&lt;/</' -e 's/&gt;/>/' "$DATADIR"/$(date +%Y-%m-%d)_logb.adi
+
+#CONVERT TO CSV
+python3 "$SCRIPTDIR"/adif_parser/adif_parser_qrz.py "$DATADIR"/$(date +%Y-%m-%d)_logb.adi
 
 #APPEND TO RAW DB
 echo "Appending to logbook_raw table..."
@@ -23,7 +29,7 @@ my_country, my_gridsquare, qrzcom_qso_upload_date, qso_date, \
 rst_rcvd, rst_sent, station_callsign, time_off, tx_pwr \
 FROM logbook_raw; \
 COPY tmp_log_table \
-FROM '$DOCKERDATADIR/$FILE' \
+FROM '$DOCKERDATADIR/$(date +%Y-%m-%d)_logb.csv' \
 WITH (FORMAT CSV, HEADER, DELIMITER ','); \
 
 INSERT INTO logbook_raw ( \
