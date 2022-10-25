@@ -1,0 +1,22 @@
+logb_get_docker script does
+* dumps last 7d curl output to .adi file
+* uses sed for cleaning
+* sends to python script for csv conversion
+* copies to logbook_raw db
+
+MAKEFILE:
+* tables in create_base_tables
+* _____ in create_views
+* any existing _logb.csv files in add-data -- need logbook version of this script
+* tables in drop
+
+CRONJOBS:
+#GET logbook data, put into logbook_raw
+sudo sh logb_get_docker.sh
+#INSERT into logbook_staged
+cat $SQLDIR/insert_staged_logb.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -d $DB -U $USER 
+#TRANSFORMATIONS - should do separately and not pull from psk data, not all contacts will be in psk data
+grid to lat-lon
+station-to-station distance
+
+

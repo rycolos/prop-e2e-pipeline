@@ -12,7 +12,7 @@ EDATE=$(date +%Y-%m-%d)
 
 mkdir -p "$DATADIR"
 
-#GET FILE
+#GET FILE, LAST 7 DAYS
 echo "Getting latest data..."
 curl "https://logbook.qrz.com/api?key=$KEY&action=fetch&option=BETWEEN:$SDATE+$EDATE,type:adif" \
 > "$DATADIR"/$(date +%Y-%m-%d)_logb.adi
