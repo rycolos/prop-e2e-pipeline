@@ -17,9 +17,9 @@ As an amateur radio operator, I am frequently experimenting with antennas and ne
 Runs all key tasks to build postgres container, create tabes and views, ingest initial dataset, and perform transformation.
 1. `clean` - Stops docker compose (if running) and removes containers
 2. `start` - Starts docker compose and brings up containers
-3. `create-base-tables` - Creates initial `pskreporter_raw` and `pskreporter_staged` tables
-4. `create-views` - Create analytics-ready views on `pskreporter_staged`
-5. `add-data` - Loads existing data from `postgres_data/psk_data` folder into `pskreporter_raw`, transforms and inserts into `pskreporter_staged`, performs a function to convert grid square > lat/lon and inserts into `pskreporter_staged`, and performs a function to calculate station-to-station distance and inserts into `pskreporter_staged`
+3. `create-base-tables` - Creates initial `pskreporter` and `logbook` raw and staged tables.
+4. `create-views` - Create analytics-ready views on staged tables.
+5. `add-data` - Loads existing data from `postgres_data/source_data` folder into relevant raw tables. Transforms and inserts into staged tables.
 6. `drop` - Delete all tables 
 
 Run `make all-no-load` to run all tasks except `add-data`
@@ -31,19 +31,10 @@ Add tasks for the following to the root crontab:
 2. Perform a daily INSERT of `pskreporter_raw` into `pskreporter_staged`
 3. Run a daily function to convert maidenhead grid square (`sender_locator` and `receiver_locator`) to lat/lon on `pskreporter_staged`
 4. Run a daily function to calculate station-to-station distance on `pskreporter_staged`
-```
-0 4 * * *  printf "$(date)\n********************\n" >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
-0 4 * * * sh /home/kepler/prop-e2e-pipeline/scripts/psk_get_docker.sh >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
-30 4 * * * cat /home/kepler/prop-e2e-pipeline/sql/insert_staged_psk.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
-0 5 * * * python3 /home/kepler/prop-e2e-pipeline/scripts/grid_to_latlon.py >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
-30 5 * * * cat /home/kepler/prop-e2e-pipeline/sql/latlon_to_distance.sql | docker exec -i prop-e2e-pipeline-postgres-1 psql -U postgres -d prop-e2e >> /home/kepler/prop-e2e-pipeline/cronlog.log 2>&1
-```
 
-### Manual logbook data ingest and transformation
-Logbook data is not available to be automatically retrieved and ingested. It requires a recurring manual process. On some cadence, the following tasks are required:
-1. Export logbook in ADIF format from qrz.com
-2. Convert ADIF fil to CSV with `adif_parser_qrz.py`
-3. Append logbook csv to `logbook_raw` table and copy records to `logbook_staged` table with `logb_get_docker.sh`
+### Automated logbook data ingest and transformation
+1. Pull 7d dump of logbook via qrz.com API, perform basic cleaning, and parse from .adi file to .csv (via `adif_parser_qrz.py`).
+2. Append .csv to `logbook_raw` and insert non-duplicate `logbook_raw` records into `logbook_staged` (with `logb_get.sh`).
 
 ## Tables
 
@@ -64,8 +55,10 @@ Filtered view on `pskreporter_staged` to only show signals received at my statio
 Filtered view on `pskreporter_staged` to only show signals of mine that have been received by other stations.
 
 **logbook_raw**
+Raw 7d dump from my qrz.com logbook, using their official logbook api: https://www.qrz.com/docs/logbook30/api. Mild cleaning using `sed` is performed prior to ingest to handle special characters. 
 
 **logbook_staged**
+Pre-analysis tables with column name changes and type casting for better analysis. 
 
 ## Example Analysis Queries
 
